@@ -20,7 +20,7 @@ h1 {
   font-size: 80px;
   color: #fff;
   margin-left: 10px;
-  margin-top: 20px;
+  margin-top: 50px;
   margin-bottom: 0;
   position: absolute;
 }
@@ -31,4 +31,14 @@ h1 {
   color: #fff;
   margin-left: 10px;
   padding: 0;
+}
+.fa-bars {
+  color: #fff;
+  position: absolute;
+  right: 50px;
+  top: 70px;
+}
+nav ul li{
+  list-style-type: none;
+
 }
