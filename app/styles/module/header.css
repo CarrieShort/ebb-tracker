@@ -29,6 +29,8 @@ h1 {
   font-family: 'Open Sans', sans-serif;
   font-size: 46px;
   color: #fff;
+  position: absolute;
+  margin-top: 105px;
   margin-left: 10px;
   padding: 0;
 }

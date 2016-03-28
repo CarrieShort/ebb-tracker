@@ -1,32 +1,64 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Ebb Tracker - Mobile app for tracking tides and tide pooling locations</title>
-    <link type="text/css" rel="stylesheet" href="vendor/styles/reset.css">
-    <link type="text/css" rel="stylesheet" href="styles/base/base.css">
-    <link type="text/css" rel="stylesheet" href="styles/module/style-guide.css">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Italianno' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link href="styles/base/global.css" rel="stylesheet" type="text/css">
-    <link href="styles/module/header.css" rel="stylesheet" type="text/css">
-    <!-- <link href="vendor/styles/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Italianno" rel="stylesheet" type="text/css"> -->
-  </head>
-  <body>
-    <header>
-      <img class="logo" src="img/logo-icon.png">
-      <span class="topTitle">Ebb</span>
-      <span class="bottomTitle">Tracker</span>
 
-      <i class="fa fa-bars fa-5x"></i>
-  <nav>
-    <ul>
-       <li>Search</li>
-       <li>Location</li>
-       <li>Contact</li>
-    </ul>
-  </nav>
-    </header>
-  </body>
+<head>
+  <title>Ebb Tracker - Mobile app for tracking tides and tide pooling locations</title>
+  <link rel="stylesheet" type="text/css" href="vendor/styles/reset.css">
+  <link rel="stylesheet" type="text/css" href="styles/base/base.css">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Italianno">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/base/global.css">
+  <link rel="stylesheet" type="text/css" href="styles/module/header.css">
+  <link rel="stylesheet" type="text/css" href="styles/layout/layout.css">
+
+<body>
+  <header>
+    <img class="logo" src="img/logo-icon.png">
+
+    <span class="topTitle">Ebb</span>
+    <span class="bottomTitle">Tracker</span>
+
+    <i class="fa fa-bars fa-5x"></i>
+    <nav>
+      <ul>
+        <li>Search</li>
+        <li>Location</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+  </header>
+  <section id="search"></section>
+  <h1>Search Tide Pooling Locations</h1>
+  <input id="address-input" class="controls" type="text" placeholder="Enter your address">
+
+  <section id="location"></section>
+  <h1>Location</h1>
+  <div>map placeholder</div>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+
+  <section id="contact"></section>
+  <h1>Contact Us</h1>
+  <ul>
+    <li>
+      <input type="text" placeholder="contact">
+    </li>
+    <li>
+      <input type="text" placeholder="contact">
+    </li>
+    <li>
+      <input type="text" placeholder="contact">
+    </li>
+    <button type="submit">Sumbit</button>
+  </ul>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+<script src="scripts/searchMaps.js"></script>
+
 </html>
