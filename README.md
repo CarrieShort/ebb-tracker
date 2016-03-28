@@ -16,6 +16,6 @@ Ebb tracker description placeholder
 * [google fonts](https://www.google.com/fonts)
 
 ##Naming Conventions
-* branch: userName-issueNumber-feature
+* branch: pairProgrammingNames-#issueNumber-feature
 * HTML/CSS: kebab-case
 * JS: camelCase
