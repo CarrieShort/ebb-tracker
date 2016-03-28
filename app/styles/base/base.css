@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+  color: red;
+}
+
+/*COLOR STYLES
+=======================================*/
+
+/*primary: #4D73B8;
+secondary: #CFCFCF;
+background: #fff;
+base-font: #5E5E5E;
+input-border: #BDAD75;
+input-text-field: #F3EAD4;
+tertiary: #d6bf3e;*/
+
+/*FONT STYLES
+=======================================*/
+/*script-font: 'Open Sans', sans-serif;
+sans-font: 'Italianno', cursive;*/
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/*LINK STYLES
+=======================================*/
+
+a, a:link, a:active {
+  text-decoration: none;
+  color: #4D73B8;
+}
+
+a:hover, a:focus {
+}
+
+a:visited {
+}
