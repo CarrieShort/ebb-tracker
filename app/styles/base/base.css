@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #5E5E5E
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.4em;
+  margin-bottom: 0.7em;
+
+}
+
+/*HEADING STYLES
+=======================================*/
+
+h1, h2, h3, h4 {
+  margin-bottom: 0.7em;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.2em;
+}
+
+/*COLOR STYLES
+=======================================*/
+
+/*primary: #4D73B8;
+secondary: #CFCFCF;
+tertiary: #d6bf3e;
+background: #fff;
+base-font: #5E5E5E;
+input-border: #BDAD75;
+input-text-field: #F3EAD4;
+*/
+
+/*FONT STYLES
+=======================================*/
+/*script-font: 'Open Sans', sans-serif;
+sans-font: 'Italianno', cursive;*/
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/*LINK STYLES
+=======================================*/
+
+a, a:link, a:active {
+  text-decoration: none;
+  color: #4D73B8;
+}
+
+a:hover, a:focus {
+}
+
+a:visited {
+}
+
+/*LIST STYLES
+=======================================*/
+
+ul {
+  margin-left: 35px;
+}
+
+ul li {
+  list-style: disc;
+  margin-bottom: 0.7em;
+}
+
+/*FORM STYLES
+=======================================*/
+
+label {
+  padding-bottom: 0.4em;
+  display: block;
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #BDAD75;
+  background:#F3EAD4;
+  border-radius: 5px;
+}
+
+/*ICON STYLES
+=======================================*/
+
+.fa-star, .fa-star-o, .fa-star-half-o {
+  color: #d6bf3e;
+}
