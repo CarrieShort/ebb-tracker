@@ -10,19 +10,24 @@ Beach.prototype.toHtml = function() {
   return template(this);
 };
 
-function loadSearchResults() {
-$('#search').append(Beach.toHtml());
+Beach.loadSearchResults = function() {
+  beaches.forEach(function(ele){
+    $('#search').append(ele.toHtml());
+  })
 };
 
 
 Beach.loadAll = function(data) {
-  beaches.forEach(function(ele) {
-    Beach.all.push(new Beach(ele));
+  console.log("anything",data.beaches);
+  data.beaches.forEach(function(ele) {
+    beaches.push(new Beach(ele));
   })
 };
 
 $.getJSON('../data/beaches.json', function(data) {
   console.log('search data',data);
   localStorage.data = JSON.stringify(data);
-  Beach.loadAll();
+  Beach.loadAll(data);
+  Beach.loadSearchResults();
+
 });
