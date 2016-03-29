@@ -1,0 +1,25 @@
+{
+  "name": "ebb-tracker",
+  "version": "1.0.0",
+  "description": "Final Group Project for Code Fellows 301-d6",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.13.4",
+    "express-request-proxy": "^2.0.0",
+    "node-sass": "^3.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarrieShort/ebb-tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CarrieShort/ebb-tracker/issues"
+  },
+  "homepage": "https://github.com/CarrieShort/ebb-tracker#readme"
+}
