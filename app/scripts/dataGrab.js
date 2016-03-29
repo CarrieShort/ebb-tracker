@@ -57,10 +57,9 @@ var callData = function() {
     end_date: '20130808 09:00',
     station: '9447130',
     datum: 'MTL',
-    product: 'water_temperature',
+    product: 'predictions',
     units: 'english',
     time_zone: 'gmt',
-    interval: 'h',
     format: 'json'
   }).done(function(data) {
     console.log('done', data);
