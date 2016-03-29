@@ -5,10 +5,15 @@ function Beach (opts) {
 };
 
 Beach.prototype.toHtml = function() {
-  var source = $('#beach-template').html()
+  var source = $('#beach-template').html();
   var template = Handlebars.compile(source);
   return template(this);
 };
+
+function loadSearchResults() {
+$('#search').append(Beach.toHtml());
+};
+
 
 Beach.loadAll = function(data) {
   beaches.forEach(function(ele) {
