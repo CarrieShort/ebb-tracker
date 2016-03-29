@@ -51,7 +51,7 @@ var callbackString = function(e){
 };
 
 var callData = function() {
-  var jsonUrl = 'http://tidesandcurrents.noaa.gov/api/datagetter?callback=?';
+  var jsonUrl = '/tides/';
   $.getJSON(jsonUrl, {
     begin_date: '20130808 08:00',
     end_date: '20130808 09:00',
@@ -63,7 +63,7 @@ var callData = function() {
     interval: 'h',
     format: 'json'
   }).done(function(data) {
-    console.log('done', JSON.stringify(data));
+    console.log('done', data);
   }).fail(function(e) {
     console.log('this is error', e);
   });
