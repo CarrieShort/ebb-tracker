@@ -1,6 +1,6 @@
 var beaches = [];
 
-function Beach(opts) {
+function Beach (opts) {
   for (key in opts) this[key] = opts[key];
 };
 
@@ -10,10 +10,14 @@ Beach.prototype.toHtml = function() {
   return template(this);
 };
 
-// beachData.forEach(function(obj) {
-//   beaches.push(new Beach(obj));
-// });
-//
-// beaches.forEach(function(obj){
-//   $('#beaches').append(obj.toHtml())
-// });
+Beach.loadAll = function(data) {
+  beaches.forEach(function(ele) {
+    Beach.all.push(new Beach(ele));
+  })
+};
+
+$.getJSON('../data/beaches.json', function(data) {
+  console.log('search data',data);
+  localStorage.data = JSON.stringify(data);
+  Beach.loadAll();
+});
