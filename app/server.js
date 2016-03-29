@@ -6,7 +6,7 @@ var requestProxy = require('express-request-proxy'),
 var proxyNOAA = function(request, response) {
   console.log('Routing NOAA request for', request.params[0]);
   (requestProxy({
-    url: 'http:///tidesandcurrents.noaa.gov/api/datagetter?' + request.params[0]
+    url: 'https://tidesandcurrents.noaa.gov/api/datagetter' + request.params[0]
   }))(request, response);
 };
 
