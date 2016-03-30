@@ -3,8 +3,28 @@
 var callbackString = function(e) {
   JSON.stringify(e);
 };
+var today = new Date();
 
+var date = function() {
+  today;
+  var mm = "0" + (today.getMonth() + 1);
+  var day = "0" + (today.getDate());
+  var year = today.getFullYear();
+  if (mm > 10) {
+    mm = today.getMonth() + 1;
+    console.log("the month is ", mm);
+  } else {
+    console.log("month failed");
+  }
+  if (day > 10) {
+    day = today.getDate();
+  } else {
+    console.log("day failed");
+  }
+  var newDate = year + mm + day;
 
+  return newDate;
+}
 var jsonUrl = '/tides/';
 var callData = function() {
   jsonUrl;
@@ -50,13 +70,15 @@ var dataToday = function() {
   });
 };
 
-var dataTomorrow = function() {
+var detailData = function() {
   // var tomorrow = new Date();
   // date.setDate(date.getDate() + 1);
   jsonUrl;
+  var startDate = date();
+  console.log(startDate);
   $.get(jsonUrl, {
-    end_date: '20160402',
-    range: 24,
+    begin_date: startDate,
+    range: 72,
     station: '9447130',
     datum: 'MLW',
     product: 'predictions',
@@ -73,8 +95,9 @@ var dataTomorrow = function() {
 
 var dataTwoDays = function() {
   jsonUrl;
+  var startDate = (date()+1);
   $.get(jsonUrl, {
-    end_date: '20160403',
+    begin_date: startDate,
     range: 24,
     station: '9447130',
     datum: 'MLW',
