@@ -51,8 +51,10 @@ var callData = function() {
 
 };
 
+var next12 = {};
+
 // Need to find next Low Tide, 12 hour increments
-var dataToday = function() {
+var nextLowTideData = function() {
   jsonUrl;
   $.get(jsonUrl, {
     date: 'today',
@@ -65,10 +67,24 @@ var dataToday = function() {
     format: 'json'
   }).done(function(data) {
     console.log('done', data);
+    next12 = JSON.parse(data);
   }).fail(function(e) {
     console.log('this is error', e);
   });
-};
+ };
+ var nextLowTide = function(){
+   var lowTide = nextLowTideData();
+   console.log(lowTide);
+   console.log(lowTide.predictions);
+  //  var someName = lowTide.predictions.map(function(){
+  //    return t;
+  //  });
+   console.log('next 12', next12.predictions);
+  //  next12.predictions.reduce(function(acc, cur, idx, arr){
+  //    console.log();('this is cur',cur);
+  //    return cur;
+  //  });
+ };
 
 var detailData = function() {
   // var tomorrow = new Date();
@@ -91,6 +107,11 @@ var detailData = function() {
     console.log('this is error', e);
   });
 };
+var dataTomorrow = function(){
+  detailData().reduce(function(acc, cur,idx, arr){
+
+  },[])
+}
 // Need to find next Low Tide, 12 hour increments
 
 var dataTwoDays = function() {
