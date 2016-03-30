@@ -5,5 +5,7 @@
     $('#location').show();
   };
 
+  beachData.retrieveData(Beach.loadAll);
+
   module.locationsController = locationsController;
 })(window);
