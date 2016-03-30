@@ -1,33 +1,32 @@
-var beaches = [];
+(function(module) {
+  var beaches = [];
 
-function Beach (opts) {
-  for (key in opts) this[key] = opts[key];
-};
+  function Beach(opts) {
+    for (key in opts) this[key] = opts[key];
+  };
 
-Beach.prototype.toHtml = function() {
-  var source = $('#beach-template').html();
-  var template = Handlebars.compile(source);
-  return template(this);
-};
+  Beach.prototype.toHtml = function(sourceTemplate) {
+    var template = Handlebars.compile(sourceTemplate.html());
+    return template(this);
+  };
 
-Beach.loadSearchResults = function() {
-  beaches.forEach(function(ele){
-    $('#search').append(ele.toHtml());
-  })
-};
+  Beach.renderSearchResults = function(ctx, next) {
+    console.log('renderSearchResults');
+    beaches.forEach(function(ele) {
+      $('#index').append(ele.toHtml($('#beach-template')));
+    })
+  };
 
 
-Beach.loadAll = function(data) {
-  console.log("anything",data.beaches);
-  data.beaches.forEach(function(ele) {
-    beaches.push(new Beach(ele));
-  })
-};
+  Beach.loadAll = function(ctx, next) {
+    console.log('loadAll');
+    console.log("beachArray", beachData.beachArray);
+    beachData.beachArray.forEach(function(ele) {
+      beaches.push(new Beach(ele));
+    })
+    next();
+  };
 
-$.getJSON('../data/beaches.json', function(data) {
-  console.log('search data',data);
-  localStorage.data = JSON.stringify(data);
-  Beach.loadAll(data);
-  Beach.loadSearchResults();
 
-});
+  module.Beach = Beach;
+})(window);

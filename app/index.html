@@ -11,12 +11,12 @@
   <link rel="stylesheet" type="text/css" href="styles/layout/layout.css">
 
   <script id="beach-template" type="text/x-handlebars-template">
-  {{#if name}}
-  <h2>{{name}}</h2>
-  <p>{{distance}} {{time}} </p>
-  {{else}}
-  <p>There are no beaches near you please change your location.</p>
-  {{/if}}
+    {{#if name}}
+    <h2>{{name}}</h2>
+    <p>{{distance}} {{time}} </p>
+    {{else}}
+    <p>There are no beaches near you please change your location.</p>
+    {{/if}}
   </script>
   <!-- <base href="/"> -->
 </head>
@@ -37,15 +37,22 @@
     </ul>
   </nav>
 
-<!--Search Section-->
-    <section id="search" class="nav-content">
-      <h1>Search Tide Pooling Locations</h1>
-      <div><input id="address-input" class="controls" type="text" placeholder="Enter your address"></div>
-    </section>
-<p></p>
-<!--Location Section-->
+  <!--Home Page Section-->
+  <section id="index">
+    <input id="address-input" class="controls" type="text" placeholder="Enter your address">
+  </section>
+
+  <!--Search Section-->
+  <section id="search" class="nav-content">
+    <h1>Search Tide Pooling Locations</h1>
+    <div>
+      <p></p>
+    </div>
+  </section>
+
+  <!--Location Section-->
   <section id="location" class="nav-content">
-  <h1>Location</h1>
+    <h1>Location</h1>
     <div id="map"></div>
     <ul>
       <li><i class="fa fa-clock-o"></i>1<i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i></li>
@@ -54,30 +61,38 @@
     </ul>
   </section>
 
-<!--Contact Section-->
+  <!--Contact Section-->
   <section id="contact" class="nav-content">
     <h1>Contact Us</h1>
-      <ul>
-        <li><input type="text" placeholder="contact"></li>
-        <li><input type="text" placeholder="contact"></li>
-        <li><input type="text" placeholder="contact"></li>
-      </ul>
-      <button type="submit">Sumbit</button>
+    <ul>
+      <li>
+        <input type="text" placeholder="contact">
+      </li>
+      <li>
+        <input type="text" placeholder="contact">
+      </li>
+      <li>
+        <input type="text" placeholder="contact">
+      </li>
+    </ul>
+    <button type="submit">Sumbit</button>
   </section>
 
-<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+  <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<script src="vendor/scripts/page.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyA5TmznoCK4jIWsdIoRxGt32Fo0UgueGKw"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
-<script src="scripts/searchMaps.js"></script>
-<script src="scripts/dataGrab.js"></script>
-<script src="scripts/searchController.js"></script>
-<script src="scripts/search.js"></script>
-<script src="scripts/locationsView.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="vendor/scripts/page.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyA5TmznoCK4jIWsdIoRxGt32Fo0UgueGKw"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+  <script src="scripts/searchMaps.js"></script>
+  <script src="scripts/dataGrab.js"></script>
+  <script src="scripts/indexView.js"></script>
+  <script src="scripts/searchController.js"></script>
+  <script src="scripts/locationsView.js"></script>
+  <script src="scripts/search.js"></script>
+  <script src="scripts/locationsController.js"></script>
+  <script src="scripts/contactController.js"></script>
+  <script src="scripts/route.js"></script>
 </body>
-<script src="scripts/locationsController.js"></script>
-<script src="scripts/contactController.js"></script>
-<script src="scripts/route.js"></script>
+
 </html>
