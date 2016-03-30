@@ -5,25 +5,26 @@
     for (key in opts) this[key] = opts[key];
   };
 
-  Beach.prototype.toHtml = function() {
-    var source = $('#beach-template').html();
-    var template = Handlebars.compile(source);
+  Beach.prototype.toHtml = function(sourceTemplate) {
+    var template = Handlebars.compile(sourceTemplate.html());
     return template(this);
   };
 
-  Beach.loadSearchResults = function() {
+  Beach.renderSearchResults = function(ctx, next) {
+    console.log('renderSearchResults');
     beaches.forEach(function(ele) {
-      $('#search').append(ele.toHtml());
+      $('#index').append(ele.toHtml($('#beach-template')));
     })
   };
 
 
-  Beach.loadAll = function(data) {
+  Beach.loadAll = function(ctx, next) {
+    console.log('loadAll');
     console.log("beachArray", beachData.beachArray);
     beachData.beachArray.forEach(function(ele) {
       beaches.push(new Beach(ele));
     })
-    Beach.loadSearchResults();
+    next();
   };
 
 

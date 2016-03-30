@@ -2,20 +2,22 @@
 // page('/location', locationController.index);
 // page('/contact', contactController.index);
 // page();
-page('/', contact);
-page('/search', index);
-page('/location', index);
-page('/contact', contact);
+
+page('/', indexView.index, beachData.retrieveData, Beach.loadAll, Beach.renderSearchResults);
+// page('/search', searchController.index);
+// page('/location', locationsController.index);
+// page('/contact', contactController.index);
 page();
+
 function index() {
   console.log('index fired');
-  document.querySelector('p')
+  $('p')
     .textContent = 'Index page generated on the client!';
 }
 
 function contact() {
   console.log('contact fired');
 
-  document.querySelector('p')
+  $('p')
     .textContent = 'Contact page generated on the client!';
 }

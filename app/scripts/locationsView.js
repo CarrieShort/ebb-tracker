@@ -12,7 +12,7 @@
   //   console.log(snapshot.key() + " was ", snapshot.val().child("exampleUpdate")," meters tall");
   // });
 
-  beachData.retrieveData = function(next) {
+  beachData.retrieveData = function(ctx, next) {
     ref.once("value", function(snapshot) {
       // The callback function will get called twice, once for "fred" and once for "barney"
       snapshot.forEach(function(childSnapshot) {
