@@ -43,7 +43,6 @@
         console.log(ele.name);
         if (ele.name === ctx.filterByName){
           console.log(ele.name,ctx.filterByName);
-          console.log('firebase choke');
           console.log(ele.stationID);
           ctx.stationID = ele.stationID;
           ctx.lng = ele.longitude;

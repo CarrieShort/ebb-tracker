@@ -121,7 +121,6 @@
 
   // return high and low tides over next 72 hours from start date
   tideData.detailTideData = function(ctx,next) {
-    console.log('firebase choke');
     var today = date();
     console.log(today);
     $.get(jsonUrl, {
@@ -135,7 +134,9 @@
       format: 'json'
     }).done(function(data) {
       console.log('firebase choke');
+      console.log(data);
       var tides = JSON.parse(data);
+      console.log('firebase choke');
       ctx.tideData = filterDetailTides(tides.predictions);
       next();
     }).fail(function(e) {
