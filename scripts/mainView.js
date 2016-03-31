@@ -7,7 +7,9 @@
   mainView.index = function(ctx, next) {
     console.log('mainView');
     $('section').hide();
+    $('#map2').hide();
     $('#map').show();
+    $('#index .result').show();
     $('#index').show();
     next();
   };
@@ -33,8 +35,12 @@
         ].join(' ');
       }
 
+
       mainView.userLat = place.geometry.location.lat();
       mainView.userLng = place.geometry.location.lng();
+
+      indexController.generateCloseBeaches();
+      Beach.loadSearchResults(Beach.renderSearchResults);
 
       var myLatLng = {
         lat: place.geometry.location.lat(),
@@ -55,8 +61,8 @@
         title: 'Hello World!'
       });
 
+      next();
     });
-    next();
   };
 
 
