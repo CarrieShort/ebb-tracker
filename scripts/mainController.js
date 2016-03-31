@@ -1,9 +1,10 @@
 (function(module) {
   var beaches = [];
-
   function Beach(opts) {
     for (key in opts) this[key] = opts[key];
   };
+  Beach.all = [];
+
 
   Beach.prototype.toHtml = function(sourceTemplate) {
     var template = Handlebars.compile(sourceTemplate.html());
@@ -12,9 +13,9 @@
 
   Beach.renderSearchResults = function(ctx, next) {
     console.log('renderSearchResults');
-    console.log('beaches', beaches);
+    console.log('beaches', Beach.all);
     $('#index .result').empty();
-    beaches.forEach(function(ele) {
+    Beach.all.forEach(function(ele) {
       console.log('ele', ele);
       $('#index .result').append(ele.toHtml($('#beach-template')));
     });
@@ -32,6 +33,18 @@
   };
 
   Beach.addTideData = function(ctx,next){
+
+    console.log('beach',beaches[0]);
+    console.log('tide data',ctx.tideData);
+    beaches[0].tideData=ctx.tideData;
+    next();
+
+  };
+  Beach.addNextTideData = function(ctx,next){
+    beaches.forEach(function(ele){
+      ele.tideData=ctx.tideData;
+
+    })
 
     console.log('beach',beaches[0]);
     console.log('tide data',ctx.tideData);
@@ -67,14 +80,21 @@
   };
 
   Beach.loadSearchResults = function(callback) {
-    beaches = [];
+    Beach.all = [];
     console.log('this is beaches after i cleared array',beaches);
     console.log('loadAll');
     console.log('beachArray', beachData.beachArray);
 
-    indexController.closeBeaches.forEach(function(ele) {
-      beaches.push(new Beach(ele));
+    indexController.closeBeaches.forEach(function(ele, idx, arr) {
+      var stationID = ele.stationID;
+      console.log(stationID,ele.name);
+      tideData.nextLowTideData (stationID, idx);
+    });
+  indexController.closeBeaches.forEach(function(ele, idx, arr) {
+
+      Beach.all.push(new Beach(ele));
     })
+    
     callback();
   };
 

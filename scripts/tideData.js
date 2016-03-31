@@ -98,14 +98,15 @@
   };
 
   // Need to find next Low Tide, 12 hour increments
-  tideData.nextLowTideData = function(ctx,next) {
+  tideData.nextLowTideData = function(stationID, idx) {
+    console.log('nextLowTideData ran',indexController.closeBeaches[idx]);
     var today = date();
     var time = timeStamp();
     console.log(today);
     $.get(jsonUrl, {
       begin_date: today + ' ' + time,
       range: 12,
-      station: '9447130',
+      station: stationID,
       datum: 'MLW',
       product: 'predictions',
       units: 'english',
@@ -113,7 +114,8 @@
       format: 'json'
     }).done(function(data) {
       var tides = JSON.parse(data);
-      tideData.nextTideResult = filterNextLowTide(tides.predictions);
+      // tideData.nextTideResult = filterNextLowTide(tides.predictions);
+      indexController.closeBeaches[idx].tideData = filterNextLowTide(tides.predictions);
     }).fail(function(e) {
       console.log('this is error', e);
     });
