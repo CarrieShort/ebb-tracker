@@ -1,3 +1,6 @@
+var userLat;
+var userLng;
+
 function initialize() {
   var address = $('#address-input')[0];
   var autocomplete = new google.maps.places.Autocomplete(address);
@@ -16,6 +19,9 @@ function initialize() {
       (place.address_components[2] && place.address_components[2].short_name || '')
       ].join(' ');
   }
+
+  userLat = place.geometry.location.lat();
+  userLng = place.geometry.location.lng();
 
   // document.getElementById('lat').innerHTML = place.geometry.location.lat();
   // document.getElementById('long').innerHTML = place.geometry.location.lng();
