@@ -27,8 +27,9 @@
   };
 
   Beach.addTideData = function(ctx,next){
-    console.log('tide data',ctx.tideData);
+
     console.log('beach',beaches[0]);
+    console.log('tide data',ctx.tideData);
     beaches[0].tideData=ctx.tideData;
     next();
 
@@ -42,6 +43,7 @@
         console.log(ele.name);
         if (ele.name === ctx.filterByName){
           console.log(ele.name,ctx.filterByName);
+          console.log('firebase choke');
           console.log(ele.stationID);
           ctx.stationID = ele.stationID;
           ctx.lng = ele.longitude;
