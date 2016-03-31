@@ -1,0 +1,46 @@
+header {
+  background-color: #4D73B8;
+  width: 100%;
+  height: 220px;
+}
+
+h1 {
+  display: inline-block;
+  list-style-type: none;
+}
+
+.logo {
+  margin-top: 20px;
+  margin-left: 80px;
+  display: inline-block;
+}
+
+.topTitle {
+  font-family: 'Italianno', cursive;
+  font-size: 80px;
+  color: #fff;
+  margin-left: 10px;
+  margin-top: 50px;
+  margin-bottom: 0;
+  position: absolute;
+}
+
+.bottomTitle {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 46px;
+  color: #fff;
+  position: absolute;
+  margin-top: 105px;
+  margin-left: 10px;
+  padding: 0;
+}
+.fa-bars {
+  color: #fff;
+  position: absolute;
+  right: 50px;
+  top: 70px;
+}
+nav ul li{
+  list-style-type: none;
+
+}

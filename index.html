@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ebb Tracker - Mobile app for tracking tides and tide pooling locations</title>
+  <link rel="stylesheet" type="text/css" href="/vendor/styles/reset.css">
+  <link rel="stylesheet" type="text/css" href="/styles/base/base.css">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Italianno">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/styles/module/header.css">
+  <link rel="stylesheet" type="text/css" href="/styles/layout/layout.css">
+
+  <script id="beach-template" type="text/x-handlebars-template">
+    {{#if name}}
+    <h2>{{name}}</h2>
+
+    <p>{{distance}} {{time}} </p>
+    {{else}}
+    <p>There are no beaches near you please change your location.</p>
+    {{/if}}
+  </script>
+
+  <script id="detail-template" type="text/x-handlebars-template">
+    {{#if name}}
+    <h2 class="detail-title">{{name}}</h2>
+    <h3>Tide Forecast</h3>
+    <ul>
+      {{#each tideData}}
+      <li class="{{status}}">{{time}}{{v}}</li>
+      {{/each}}
+    </ul>
+    {{else}}
+    <p>This is not a valid beach name</p>
+    {{/if}}
+  </script>
+  <!-- <base href="/"> -->
+</head>
+
+<body>
+  <header>
+    <a href="/"><img class="logo" src="/img/logo-icon.png"></a>
+    <span class="topTitle">Ebb</span>
+    <span class="bottomTitle">Tracker</span>
+    <i class="fa fa-bars fa-5x"></i>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href='/beach/Example_2/'>Search</a></li>
+      <li><a href='/location'>Location</a></li>
+      <li><a href='/contact'>Contact</a></li>
+    </ul>
+  </nav>
+
+  <!--Home Page Section-->
+  <section id="index">
+    <input id="address-input" class="controls" type="text" placeholder="Enter your address">
+    <section class="result">
+    </section>
+  </section>
+
+  <!--Search Section-->
+  <section id="search" class="nav-content">
+    <h1>Search Tide Pooling Locations</h1>
+    <div>
+      <p></p>
+    </div>
+  </section>
+
+  <!--Location Section-->
+  <section id="location" class="nav-content">
+    <h1>Location</h1>
+    <ul>
+      <li><i class="fa fa-clock-o"></i>1<i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i></li>
+      <li><i class="fa fa-clock-o">2</i></li>
+      <li><i class="fa fa-clock-o">3</i></li>
+    </ul>
+  </section>
+
+  <!--Detail Section-->
+  <section id="detail" class="nav-content">
+
+  </section>
+
+  <!--Contact Section-->
+  <section id="contact" class="nav-content">
+    <h1>Contact Us</h1>
+    <ul>
+      <li>
+        <input type="text" placeholder="contact">
+      </li>
+      <li>
+        <input type="text" placeholder="contact">
+      </li>
+      <li>
+        <input type="text" placeholder="contact">
+      </li>
+    </ul>
+    <button type="submit">Sumbit</button>
+  </section>
+  <div id="map"></div>
+  <div id="map2"></div>
+
+  <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="/vendor/scripts/page.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyA5TmznoCK4jIWsdIoRxGt32Fo0UgueGKw"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+  <script src="/scripts/searchMaps.js"></script>
+  <script src="/scripts/tideData.js"></script>
+  <script src="/scripts/indexView.js"></script>
+  <script src="/scripts/detailView.js"></script>
+  <script src="/scripts/beachData.js"></script>
+  <script src="/scripts/mainController.js"></script>
+  <script src="/scripts/indexController.js"></script>
+  <script src="/scripts/route.js"></script>
+</body>
+
+</html>

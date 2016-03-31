@@ -1,0 +1,45 @@
+{
+  "beaches": [
+    {"name": "Carkeek Park",
+      "longitude": "-122.372298",
+      "latitude": "47.712489",
+      "stationID": "9447130",
+      "url": "http://www.seattle.gov/parks/environment/carkeek.htm"
+    },
+     {"name": "Golden Gardens",
+      "longitude": "-122.402293",
+      "latitude": "47.689707",
+      "stationID": "9447130",
+      "url": "http://www.seattle.gov/parks/park_detail.asp?id=243"
+    },
+     {"name": "Discovery Park",
+      "longitude": "-122.416435",
+      "latitude": "47.666362",
+      "stationID": "9447130",
+      "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+    }
+  ],
+  "ratings": {
+    "Carkeek Park": {
+      "1star": "10",
+      "2star": "12",
+      "3star": "1",
+      "4star": "0",
+      "5star": "0"
+    },
+    "Golden Gardens": {
+      "1star": "1",
+      "2star": "3",
+      "3star": "5",
+      "4star": "1",
+      "5star": "0"
+    },
+    "Discovery Park": {
+      "1star": "3",
+      "2star": "2",
+      "3star": "12",
+      "4star": "1",
+      "5star": "1"
+    }
+  }
+}
