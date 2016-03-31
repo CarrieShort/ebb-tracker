@@ -13,6 +13,7 @@
   <script id="beach-template" type="text/x-handlebars-template">
     {{#if name}}
     <h2>{{name}}</h2>
+
     <p>{{distance}} {{time}} </p>
     {{else}}
     <p>There are no beaches near you please change your location.</p>
@@ -21,8 +22,7 @@
 
   <script id="detail-template" type="text/x-handlebars-template">
     {{#if name}}
-    <h2>{{name}}</h2>
-    <div id="map"></div>
+    <h2 class="detail-title">{{name}}</h2>
     <h3>Tide Forecast</h3>
     <ul>
       {{#each tideData}}
@@ -38,7 +38,7 @@
 
 <body>
   <header>
-    <img class="logo" src="/img/logo-icon.png">
+    <a href="/"><img class="logo" src="/img/logo-icon.png"></a>
     <span class="topTitle">Ebb</span>
     <span class="bottomTitle">Tracker</span>
     <i class="fa fa-bars fa-5x"></i>
@@ -46,7 +46,7 @@
 
   <nav>
     <ul>
-      <li><a href='/search'>Search</a></li>
+      <li><a href='/beach/Example_2/'>Search</a></li>
       <li><a href='/location'>Location</a></li>
       <li><a href='/contact'>Contact</a></li>
     </ul>
@@ -55,7 +55,8 @@
   <!--Home Page Section-->
   <section id="index">
     <input id="address-input" class="controls" type="text" placeholder="Enter your address">
-    <div id="map"></div>
+    <section class="result">
+    </section>
   </section>
 
   <!--Search Section-->
@@ -69,7 +70,6 @@
   <!--Location Section-->
   <section id="location" class="nav-content">
     <h1>Location</h1>
-    <div id="map"></div>
     <ul>
       <li><i class="fa fa-clock-o"></i>1<i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i></li>
       <li><i class="fa fa-clock-o">2</i></li>
@@ -98,6 +98,8 @@
     </ul>
     <button type="submit">Sumbit</button>
   </section>
+  <div id="map"></div>
+  <div id="map2"></div>
 
   <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
 

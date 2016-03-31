@@ -30,13 +30,85 @@ function initialize() {
     zoom: 15
   });
 
+  // google.maps.event.addDomListener(map2, 'click', function() {
+  //     window.alert('Map was clicked!');
+  //   });
+  //
+  // var chicago = {lat: 41.85, lng: -87.65};
+  // var indianapolis = {lat: 39.79, lng: -86.14};
+  //
+  // var map2 = new google.maps.Map(document.getElementById('map2'), {
+  //   center: chicago,
+  //   scrollwheel: false,
+  //   zoom: 7
+  // });
+  //
+  // var directionsDisplay = new google.maps.DirectionsRenderer({
+  //   map: map2
+  // });
+  //
+  // // Set destination, origin and travel mode.
+  // var request = {
+  //   destination: indianapolis,
+  //   origin: chicago,
+  //   travelMode: google.maps.TravelMode.DRIVING
+  // };
+  //
+  // // Pass the directions request to the directions service.
+  // var directionsService = new google.maps.DirectionsService();
+  // directionsService.route(request, function(response, status) {
+  //   if (status == google.maps.DirectionsStatus.OK) {
+  //     // Display the route on the map.
+  //     directionsDisplay.setDirections(response);
+  //   }
+  // });
+
+
+
+
+
+
   // Create a marker and set its position.
   var marker = new google.maps.Marker({
     map: map,
     position: myLatLng,
     title: 'Hello World!'
   });
+
+  });
+}
+
+function mapFunction(){
+
+  var chicago = {lat: 41.85, lng: -87.65};
+  var indianapolis = {lat: 39.79, lng: -86.14};
+
+  var map2 = new google.maps.Map(document.getElementById('map2'), {
+    center: chicago,
+    scrollwheel: false,
+    zoom: 7
+  });
+
+  var directionsDisplay = new google.maps.DirectionsRenderer({
+    map: map2
+  });
+
+  // Set destination, origin and travel mode.
+  var request = {
+    destination: indianapolis,
+    origin: chicago,
+    travelMode: google.maps.TravelMode.DRIVING
+  };
+
+  // Pass the directions request to the directions service.
+  var directionsService = new google.maps.DirectionsService();
+  directionsService.route(request, function(response, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      // Display the route on the map.
+      directionsDisplay.setDirections(response);
+    }
   });
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
+// google.maps.event.addDomListener(window, 'load', mapFunction);
