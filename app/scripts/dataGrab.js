@@ -49,9 +49,15 @@
 
         if ((currentTide < previousTide && currentTide <= nextTide) || (currentTide <= previousTide && currentTide < nextTide)) {
           cur.status = 'low';
+          var splitDate = cur.t.split(' ');
+          cur.time = splitDate[1];
+          cur.day = splitDate[0];
           acc.push(cur);
         } else if ((currentTide > previousTide && currentTide >= nextTide) || (currentTide >= previousTide && currentTide > nextTide)) {
           cur.status = 'high';
+          var splitDate = cur.t.split(' ');
+          cur.time = splitDate[1];
+          cur.day = splitDate[0];
           acc.push(cur);
         }
       }
