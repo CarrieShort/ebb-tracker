@@ -12,8 +12,10 @@
 
   Beach.renderSearchResults = function(ctx, next) {
     console.log('renderSearchResults');
+    console.log('beaches', beaches);
+    $('#index .result').empty();
     beaches.forEach(function(ele) {
-      $('#index .result').empty();
+      console.log('ele', ele);
       $('#index .result').append(ele.toHtml($('#beach-template')));
     });
   };
@@ -22,6 +24,7 @@
     console.log('renderDetailView');
     console.log('this is beaches',beaches);
     beaches.forEach(function(ele) {
+      console.log('ele', ele);
       $('#detail #map2').insertAfter( '#detail' );
       $('#detail').empty().append(ele.toHtml($('#detail-template')));
     });
@@ -56,12 +59,25 @@
         }
       });
     } else {
-      beachData.beachArray.forEach(function(ele) {
+      indexController.closeBeaches.forEach(function(ele) {
         beaches.push(new Beach(ele));
       });
     }
     next();
   };
+
+  Beach.loadSearchResults = function(callback) {
+    beaches = [];
+    console.log('this is beaches after i cleared array',beaches);
+    console.log('loadAll');
+    console.log('beachArray', beachData.beachArray);
+
+    indexController.closeBeaches.forEach(function(ele) {
+      beaches.push(new Beach(ele));
+    })
+    callback();
+  };
+
 
 
   module.Beach = Beach;
