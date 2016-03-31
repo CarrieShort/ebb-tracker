@@ -1,6 +1,9 @@
 (function(module) {
   var mainView = {};
 
+  mainView.userLat;
+  mainView.userLng;
+
   mainView.index = function(ctx, next) {
     console.log('mainView');
     $('section').hide();
@@ -10,7 +13,7 @@
   };
 
 
-  function initialize() {
+  mainView.map = function(ctx,next) {
     console.log('initialize fires');
     var address = $('#address-input')[0];
     var autocomplete = new google.maps.places.Autocomplete(address);
@@ -29,6 +32,9 @@
           (place.address_components[2] && place.address_components[2].short_name || '')
         ].join(' ');
       }
+
+      mainView.userLat = place.geometry.location.lat();
+      mainView.userLng = place.geometry.location.lng();
 
       var myLatLng = {
         lat: place.geometry.location.lat(),
@@ -50,47 +56,9 @@
       });
 
     });
-  }
+    next();
+  };
 
-  function mapFunction() {
-
-    var chicago = {
-      lat: 41.85,
-      lng: -87.65
-    };
-    var indianapolis = {
-      lat: 39.79,
-      lng: -86.14
-    };
-
-    var map2 = new google.maps.Map(document.getElementById('map2'), {
-      center: chicago,
-      scrollwheel: false,
-      zoom: 7
-    });
-
-    var directionsDisplay = new google.maps.DirectionsRenderer({
-      map: map2
-    });
-
-    // Set destination, origin and travel mode.
-    var request = {
-      destination: indianapolis,
-      origin: chicago,
-      travelMode: google.maps.TravelMode.DRIVING
-    };
-
-    // Pass the directions request to the directions service.
-    var directionsService = new google.maps.DirectionsService();
-    directionsService.route(request, function(response, status) {
-      if (status == google.maps.DirectionsStatus.OK) {
-        // Display the route on the map.
-        directionsDisplay.setDirections(response);
-      }
-    });
-  }
-
-  google.maps.event.addDomListener(window, 'load', initialize);
 
   module.mainView = mainView;
-}(window))
+}(window));

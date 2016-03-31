@@ -3,7 +3,7 @@
 // page('/contact', contactController.index);
 // page();
 
-page('/', mainView.index, beachData.retrieveData, Beach.loadAll, Beach.renderSearchResults);
+page('/', mainView.index, beachData.retrieveData, Beach.loadAll, mainView.map, Beach.renderSearchResults);
 page('/beach/:name', detailView.index, beachData.retrieveData, Beach.loadAll,tideData.detailTideData, Beach.addTideData,Beach.renderDetailView,detailView.map);
 // page('/search', searchController.index);
 page('/location', locationView.index, beachData.retrieveData, locationView.createBeachNames, locationView.populateFilters);
