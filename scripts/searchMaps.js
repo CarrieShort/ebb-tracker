@@ -1,3 +1,6 @@
+var userLat;
+var userLng;
+
 function initialize() {
   console.log('initialize fires');
   var address = $('#address-input')[0];
@@ -18,11 +21,16 @@ function initialize() {
       ].join(' ');
   }
 
+  userLat = place.geometry.location.lat();
+  console.log('userLat', userLat);
+  userLng = place.geometry.location.lng();
+  console.log('userLng', userLng);
+
   // document.getElementById('lat').innerHTML = place.geometry.location.lat();
   // document.getElementById('long').innerHTML = place.geometry.location.lng();
 
   var myLatLng = {lat: place.geometry.location.lat(), lng: place.geometry.location.lng()};
-  console.log(myLatLng);
+  // console.log(myLatLng);
   // Create a map object and specify the DOM element for display.
   var map = new google.maps.Map(document.getElementById('map'), {
     center: myLatLng,

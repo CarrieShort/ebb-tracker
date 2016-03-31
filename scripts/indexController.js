@@ -1,41 +1,33 @@
 (function(module) {
 var indexController = {};
-indexController.beachMarker = [];
+indexController.closeBeaches = [];
 
-indexController.arrayMarker = function() {
-  indexController.beachMarker = beachData.beachArray.filter(function(ele) {
-    var parkLat = parseFloat(ele.latitude);
-    var parkLng = parseFloat(ele.longitude);
+indexController.generateCloseBeaches = function() {
+  indexController.closeBeaches = beachData.beachArray.filter(function(ele) {
+    var parkLat = (parseFloat(ele.latitude) * 1000000000);
+    console.log(parseFloat(ele.latitude));
+    var parkLng = (parseFloat(ele.longitude) * 1000000000);
     console.log('parkLat', parkLat);
 
-    var range = parseFloat(0);
+    var range = parseFloat(110000000);
     console.log(ele.latitude, ele.longitude, ele.name);
     console.log('ddfdf', userLat, userLng);
 
-    var userLowerLat = userLat - 1;
+    var userLowerLat = userLat * 1000000000 - range;
     console.log(userLowerLat);
 
-    var userUpperLat = userLat + 1;
+    var userUpperLat = userLat * 1000000000 + range;
     console.log(userUpperLat);
 
-    var userLowerLng = userLng - 1;
+    var userLowerLng = userLng * 1000000000 - range;
     console.log(userLowerLng);
 
-    var userUpperLng = userLng + 1;
+    var userUpperLng = userLng * 1000000000 + range;
     console.log(userUpperLng);
 
 
     console.log(parkLat > userLowerLat && parkLat < userUpperLat);
     return parkLat > userLowerLat && parkLat < userUpperLat;
-
-
-
-      // ref.on('child_added', function(snapshot, childSnapshot) {
-      //   console.log('retrieve');
-        // var newBeach = snapshot.val();
-        // beachData.beachArray.push(snapshot.val());
-
-      // });
     });
   };
 
