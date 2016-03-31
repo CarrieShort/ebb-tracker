@@ -1,4 +1,5 @@
 function initialize() {
+  console.log('initialize fires');
   var address = $('#address-input')[0];
   var autocomplete = new google.maps.places.Autocomplete(address);
   autocomplete.setTypes(['geocode']);
