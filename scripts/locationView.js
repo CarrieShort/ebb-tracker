@@ -4,10 +4,9 @@
 
   locationView.index = function(ctx, next) {
     console.log('locationView');
+    $('section').hide();
     $('#location').show();
-    $('#map').hide();
-    $('#index').hide();
-    $('#search').hide();
+    $('#location-result').show();
     next();
   };
 
@@ -23,18 +22,22 @@
     console.log('beach name array', beachNameArray);
     beachNameArray.map(function(cur, idx, arr) {
       var destination = cur.replace(' ', '_');
-      console.log(destination);
-      var option = "<option value='" + destination + "'> " + cur + " </option>"
-      console.log(option);
+      console.log('hello',destination);
+      var option = '<option value="' + destination + '"> ' + cur + ' </option>';
+      console.log('i',option);
+      $('.chosen-select').append(option);
       return option;
     });
-    $('.chosen-select').append(beachData.beachArray);
-  }
+    $('.chosen-select').chosen({max_selected_options: 5});
+    next();
+  };
 
-  $('.chosen-select').chosen({
-    max_selected_options: 5
-  });
+  // locationView.showSelectedBeach = function(ctx, next) {
+  //
+  // };
+
+
 
 
   module.locationView = locationView;
-}(window))
+}(window));

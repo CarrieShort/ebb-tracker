@@ -18,6 +18,15 @@
     });
   };
 
+  Beach.renderLocations = function(ctx, next) {
+    console.log('renderLocations');
+    console.log('beachsArray',beaches)
+    $('#location-result').empty();
+    beaches.forEach(function(ele) {
+      $('#location-result').append(ele.toHtml($('#map-template')));
+    });
+  };
+
   Beach.renderDetailView = function(ctx, next) {
     console.log('renderDetailView');
     console.log('this is beaches',beaches);
