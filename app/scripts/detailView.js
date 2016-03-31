@@ -5,8 +5,9 @@
     console.log('detailView');
     $('section').hide();
     $('#detail').show();
-    var beachname = ctx.params.id;
-    console.log(beachname);
+    var beachname = ctx.params.name;
+    var name = beachname.replace('_', ' ');
+    console.log(name);
     // next();
   };
 

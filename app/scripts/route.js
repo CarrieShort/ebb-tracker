@@ -4,7 +4,7 @@
 // page();
 
 page('/', indexView.index, beachData.retrieveData, Beach.loadAll, Beach.renderSearchResults);
-page('/beach/:stuff', detailView.index);
+page('/beach/:name', detailView.index);
 // page('/search', searchController.index);
 // page('/location', locationsController.index);
 // page('/contact', contactController.index);

@@ -18,6 +18,21 @@
     <p>There are no beaches near you please change your location.</p>
     {{/if}}
   </script>
+
+  <script id="detail-template" type="text/x-handlebars-template">
+    {{#if name}}
+    <h2>{{name}}</h2>
+    <div id="map"></div>
+    <h3>Tide Forecast</h3>
+    <ul>
+      {{#each tide}}
+      <li class="{{status}}">{{time}}{{v}}</li>
+      {{/each}}
+    </ul>
+    {{else}}
+    <p>This is not a valid beach name</p>
+    {{/if}}
+  </script>
   <!-- <base href="/"> -->
 </head>
 
@@ -59,6 +74,11 @@
       <li><i class="fa fa-clock-o">2</i></li>
       <li><i class="fa fa-clock-o">3</i></li>
     </ul>
+  </section>
+
+  <!--Detail Section-->
+  <section id="detail" class="nav-content">
+
   </section>
 
   <!--Contact Section-->
