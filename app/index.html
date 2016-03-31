@@ -3,12 +3,12 @@
 
 <head>
   <title>Ebb Tracker - Mobile app for tracking tides and tide pooling locations</title>
-  <link rel="stylesheet" type="text/css" href="vendor/styles/reset.css">
-  <link rel="stylesheet" type="text/css" href="styles/base/base.css">
+  <link rel="stylesheet" type="text/css" href="/vendor/styles/reset.css">
+  <link rel="stylesheet" type="text/css" href="/styles/base/base.css">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Italianno">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="styles/module/header.css">
-  <link rel="stylesheet" type="text/css" href="styles/layout/layout.css">
+  <link rel="stylesheet" type="text/css" href="/styles/module/header.css">
+  <link rel="stylesheet" type="text/css" href="/styles/layout/layout.css">
 
   <script id="beach-template" type="text/x-handlebars-template">
     {{#if name}}
@@ -23,7 +23,7 @@
 
 <body>
   <header>
-    <img class="logo" src="img/logo-icon.png">
+    <img class="logo" src="/img/logo-icon.png">
     <span class="topTitle">Ebb</span>
     <span class="bottomTitle">Tracker</span>
     <i class="fa fa-bars fa-5x"></i>
@@ -81,18 +81,19 @@
   <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  <script src="vendor/scripts/page.js"></script>
+  <script src="/vendor/scripts/page.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyA5TmznoCK4jIWsdIoRxGt32Fo0UgueGKw"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
-  <script src="scripts/searchMaps.js"></script>
-  <script src="scripts/dataGrab.js"></script>
-  <script src="scripts/indexView.js"></script>
-  <script src="scripts/searchController.js"></script>
-  <script src="scripts/locationsView.js"></script>
-  <script src="scripts/search.js"></script>
-  <script src="scripts/locationsController.js"></script>
-  <script src="scripts/contactController.js"></script>
-  <script src="scripts/route.js"></script>
+  <script src="/scripts/searchMaps.js"></script>
+  <script src="/scripts/dataGrab.js"></script>
+  <script src="/scripts/indexView.js"></script>
+  <script src="/scripts/detailView.js"></script>
+  <script src="/scripts/searchController.js"></script>
+  <script src="/scripts/locationsView.js"></script>
+  <script src="/scripts/search.js"></script>
+  <script src="/scripts/locationsController.js"></script>
+  <script src="/scripts/contactController.js"></script>
+  <script src="/scripts/route.js"></script>
 </body>
 
 </html>
