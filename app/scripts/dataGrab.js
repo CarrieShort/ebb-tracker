@@ -67,7 +67,7 @@
       var matchFound = false;
       if (acc.length > 0) {
         for (var i = 0; i < acc.length; i++) {
-          if (acc[i].v === cur.v) {
+          if (acc[i].v === cur.v && acc[i].day === cur.day) {
             matchFound = true;
           }
         }
