@@ -97,23 +97,81 @@ var nextLowTideData = function() {
   // next();
 };
 
-var nextLowTide = function() {
-  // console.log(next12.predictions);
-  var tideValue = next12.predictions.reduce(function(acc, cur, idx, arr){
+
+var detailTideData = function() {
+  var today = date();
+  console.log(today);
+
+  jsonUrl;
+  $.get(jsonUrl, {
+    begin_date: today,
+    range: 72,
+    station: '9447130',
+    datum: 'MLW',
+    product: 'predictions',
+    units: 'english',
+    time_zone: 'gmt',
+    format: 'json'
+  }).done(function(data) {
+    // console.log('done', data);
+    var tides = JSON.parse(data);
+    console.log(tides.predictions);
+    detailTides(tides.predictions);
+  }).fail(function(e) {
+    console.log('this is error', e);
+  });
+  // next();
+};
+
+var detailTides = function(tideArray){
+  var tideValue = tideArray.reduce(function(acc, cur, idx, arr){
     // console.log(cur);
-    var previousTide = idx -1;
-    var nextTide = idx + 1;
-    var wat = arr[nextTide];
+    var previousTideIndex = idx -1;
+    var nextTideIndex = idx + 1;
+    var currentTide = parseFloat(cur.v);
+
     // console.log('previous Tide Array',arr[previousTide][v]);
-    if(previousTide > 0 && nextTide < (arr.length)){
+    if(previousTideIndex > 0 && nextTideIndex < (arr.length)){
+      var previousTide = parseFloat(arr[previousTideIndex].v);
+      var nextTide = parseFloat(arr[nextTideIndex].v);
       // console.log(cur.v, idx, previousTide, nextTide, wat.v);
       // console.log(acc);
       // console.log(arr.length);
-      if(parseFloat(cur.v) < parseFloat(arr[previousTide].v) && parseFloat(cur.v) < parseFloat(arr[nextTide].v)){
-        // console.log(cur.v, idx, arr[previousTide].v, arr[nextTide].v, cur.t);
-        return cur;
+      if((currentTide < previousTide && currentTide <= nextTide) || (currentTide <= previousTide && currentTide < nextTide)){
+        console.log('low tide',currentTide, idx, previousTide, nextTide, cur.t);
+        cur.status = 'low';
+        acc.push(cur);
+
+      } else if((currentTide > previousTide && currentTide >= nextTide) || (currentTide >= previousTide && currentTide > nextTide)){
+        // console.log('high tide',currentTide, idx, previousTide, nextTide, cur.t);
+        cur.status = 'high';
+        acc.push(cur);
       }
     }
+    return acc;
+
+  },[])
+  .reduce(function(acc,cur,idx,arr){
+    console.log(acc);
+    var matchFound = false;
+    if (acc.length > 0){
+      console.log('array has things in it');
+      for(var i = 0; i < acc.length; i++) {
+        if(acc[i].v === cur.v){
+          console.log('match found',cur);
+          matchFound = true;
+        }
+      }
+        // acc.push(cur);
+    }
+    if (matchFound){
+      console.log('match was found don\'t add to array', cur);
+    } else {
+      console.log(cur, 'was pushed to array');
+      acc.push(cur);
+    }
+    return acc;
+
   },[]);
   console.log('next 12', next12.predictions);
   //  next12.predictions.reduce(function(acc, cur, idx, arr){
@@ -150,24 +208,24 @@ var nextLowTide = function() {
 // };
 // Need to find next Low Tide, 12 hour increments
 
-var dataTwoDays = function() {
-  jsonUrl;
-  var startDate = (date() + 1);
-  $.get(jsonUrl, {
-    begin_date: startDate,
-    range: 24,
-    station: '9447130',
-    datum: 'MLW',
-    product: 'predictions',
-    units: 'english',
-    time_zone: 'gmt',
-    format: 'json'
-  }).done(function(data) {
-    console.log('done', data);
-  }).fail(function(e) {
-    console.log('this is error', e);
-  });
-};
+// var dataTwoDays = function() {
+//   jsonUrl;
+//   var startDate = (date() + 1);
+//   $.get(jsonUrl, {
+//     begin_date: startDate,
+//     range: 24,
+//     station: '9447130',
+//     datum: 'MLW',
+//     product: 'predictions',
+//     units: 'english',
+//     time_zone: 'gmt',
+//     format: 'json'
+//   }).done(function(data) {
+//     console.log('done', data);
+//   }).fail(function(e) {
+//     console.log('this is error', e);
+//   });
+// };
 // Need to find next Low Tide, 12 hour increments
 
 //   module.beach = beach;
