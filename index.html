@@ -33,6 +33,12 @@
     <p>This is not a valid beach name</p>
     {{/if}}
   </script>
+
+  <script id="map-template" type="text/x-handlebars-template">
+    {{#if name}}
+    <h2 class="beach-title">{{name}}</h2>
+  </script>
+
   <!-- <base href="/"> -->
 </head>
 
@@ -70,6 +76,7 @@
   <!--Location Section-->
   <section id="location" class="nav-content">
     <h1>Location</h1>
+    <select class="chosen-select" style="width:80%;" type="text" placeholder="Check for a Beach Nearby">
     <ul>
       <li><i class="fa fa-clock-o"></i>1<i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i></li>
       <li><i class="fa fa-clock-o">2</i></li>
@@ -78,26 +85,8 @@
   </section>
 
   <!--Detail Section-->
-  <section id="detail" class="nav-content">
+  <section id="detail" class="nav-content"></section>
 
-  </section>
-
-  <!--Contact Section-->
-  <section id="contact" class="nav-content">
-    <h1>Contact Us</h1>
-    <ul>
-      <li>
-        <input type="text" placeholder="contact">
-      </li>
-      <li>
-        <input type="text" placeholder="contact">
-      </li>
-      <li>
-        <input type="text" placeholder="contact">
-      </li>
-    </ul>
-    <button type="submit">Sumbit</button>
-  </section>
   <div id="map"></div>
   <div id="map2"></div>
 
@@ -107,9 +96,12 @@
   <script src="/vendor/scripts/page.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyA5TmznoCK4jIWsdIoRxGt32Fo0UgueGKw"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+  <script src="/vendor/scripts/chosen.jquery.min"></script>
+  
   <script src="/scripts/tideData.js"></script>
   <script src="/scripts/mainView.js"></script>
   <script src="/scripts/detailView.js"></script>
+  <script src="/scripts/locationView.js"></script>
   <script src="/scripts/beachData.js"></script>
   <script src="/scripts/mainController.js"></script>
   <script src="/scripts/route.js"></script>

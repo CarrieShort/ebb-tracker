@@ -13,6 +13,7 @@
   // });
 
   beachData.retrieveData = function(ctx, next) {
+    console.log('retrieve data fires');
     ref.once("value", function(snapshot) {
       // The callback function will get called twice, once for "fred" and once for "barney"
       if (beachData.beachArray.length > 0){
@@ -27,6 +28,7 @@
         console.log('childData', childData);
         beachData.beachArray.push(childData.exampleUpdate);
       });
+      console.log(beachData.beachArray);
       next();
     });
   }

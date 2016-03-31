@@ -6,7 +6,7 @@
 page('/', mainView.index, beachData.retrieveData, Beach.loadAll, Beach.renderSearchResults);
 page('/beach/:name', detailView.index, beachData.retrieveData, Beach.loadAll,tideData.detailTideData, Beach.addTideData,Beach.renderDetailView,detailView.map);
 // page('/search', searchController.index);
-// page('/location', locationsController.index);
+page('/location', locationView.index, beachData.retrieveData, locationView.createBeachNames, locationView.populateFilters);
 // page('/contact', contactController.index);
 page();
 
