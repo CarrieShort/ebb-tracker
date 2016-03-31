@@ -19,6 +19,7 @@
 
   Beach.renderDetailView = function(ctx, next) {
     console.log('renderDetailView');
+    console.log(beaches);
     beaches.forEach(function(ele) {
       $('#detail').append(ele.toHtml($('#detail-template')));
     });

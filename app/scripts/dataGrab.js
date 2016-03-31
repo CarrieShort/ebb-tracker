@@ -126,7 +126,7 @@
     $.get(jsonUrl, {
       begin_date: today,
       range: 72,
-      station: '9447130',
+      station: ctx.stationID,
       datum: 'MLW',
       product: 'predictions',
       units: 'english',
