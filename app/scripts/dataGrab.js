@@ -36,13 +36,66 @@
     return newtimeStamp;
   };
 
+  // return array of filtered results
+  var filterDetailTides = function(tideArray) {
+    var tideValue = tideArray.reduce(function(acc, cur, idx, arr) {
+      var previousTideIndex = idx - 1;
+      var nextTideIndex = idx + 1;
+      var currentTide = parseFloat(cur.v);
+
+      if (previousTideIndex > 0 && nextTideIndex < (arr.length)) {
+        var previousTide = parseFloat(arr[previousTideIndex].v);
+        var nextTide = parseFloat(arr[nextTideIndex].v);
+
+        if ((currentTide < previousTide && currentTide <= nextTide) || (currentTide <= previousTide && currentTide < nextTide)) {
+          cur.status = 'low';
+          acc.push(cur);
+        } else if ((currentTide > previousTide && currentTide >= nextTide) || (currentTide >= previousTide && currentTide > nextTide)) {
+          cur.status = 'high';
+          acc.push(cur);
+        }
+      }
+      return acc;
+    }, [])
+    .reduce(function(acc, cur, idx, arr) {
+      var matchFound = false;
+      if (acc.length > 0) {
+        for (var i = 0; i < acc.length; i++) {
+          if (acc[i].v === cur.v) {
+            matchFound = true;
+          }
+        }
+      }
+      if (matchFound) {
+      } else {
+        acc.push(cur);
+      }
+      return acc;
+    }, []);
+    return(tideValue);
+  };
+
+  // return array of filtered results
+  var filterNextLowTide = function(tideArray) {
+    var tideValue = tideArray.reduce(function(acc, cur, idx, arr){
+      var previousTide = idx -1;
+      var nextTide = idx + 1;
+
+      if(previousTide > 0 && nextTide < (arr.length)){
+        if(parseFloat(cur.v) < parseFloat(arr[previousTide].v) && parseFloat(cur.v) < parseFloat(arr[nextTide].v)){
+          acc.push(cur);
+        }
+      }
+      return acc;
+    },[]);
+    return tideValue;
+  };
+
   // Need to find next Low Tide, 12 hour increments
-  tideData.nextLowTideData = function() {
+  tideData.nextLowTideData = function(ctx,next) {
     var today = date();
     var time = timeStamp();
     console.log(today);
-
-    jsonUrl;
     $.get(jsonUrl, {
       begin_date: today + ' ' + time,
       range: 12,
@@ -53,21 +106,17 @@
       time_zone: 'gmt',
       format: 'json'
     }).done(function(data) {
-      // console.log('done', data);
       var tides = JSON.parse(data);
-      tideData.nextTideResult = nextLowTide(tides.predictions);
+      tideData.nextTideResult = filterNextLowTide(tides.predictions);
     }).fail(function(e) {
       console.log('this is error', e);
     });
-    // next();
   };
 
-
-  tideData.detailTideData = function() {
+  // return high and low tides over next 72 hours from start date
+  tideData.detailTideData = function(ctx,next) {
     var today = date();
     console.log(today);
-
-    jsonUrl;
     $.get(jsonUrl, {
       begin_date: today,
       range: 72,
@@ -78,88 +127,11 @@
       time_zone: 'gmt',
       format: 'json'
     }).done(function(data) {
-      // console.log('done', data);
       var tides = JSON.parse(data);
-      // console.log(tides.predictions);
-      tideData.detailTideResult = detailTides(tides.predictions);
+      tideData.detailTideResult = filterDetailTides(tides.predictions);
     }).fail(function(e) {
       console.log('this is error', e);
     });
-    // next();
-  };
-
-  var detailTides = function(tideArray) {
-    var tideValue = tideArray.reduce(function(acc, cur, idx, arr) {
-      // console.log(cur);
-      var previousTideIndex = idx - 1;
-      var nextTideIndex = idx + 1;
-      var currentTide = parseFloat(cur.v);
-
-      // console.log('previous Tide Array',arr[previousTide][v]);
-      if (previousTideIndex > 0 && nextTideIndex < (arr.length)) {
-        var previousTide = parseFloat(arr[previousTideIndex].v);
-        var nextTide = parseFloat(arr[nextTideIndex].v);
-        // console.log(cur.v, idx, previousTide, nextTide, wat.v);
-        // console.log(acc);
-        // console.log(arr.length);
-        if ((currentTide < previousTide && currentTide <= nextTide) || (currentTide <= previousTide && currentTide < nextTide)) {
-          // console.log('low tide', currentTide, idx, previousTide, nextTide, cur.t);
-          cur.status = 'low';
-          acc.push(cur);
-
-        } else if ((currentTide > previousTide && currentTide >= nextTide) || (currentTide >= previousTide && currentTide > nextTide)) {
-          // console.log('high tide',currentTide, idx, previousTide, nextTide, cur.t);
-          cur.status = 'high';
-          acc.push(cur);
-        }
-      }
-      return acc;
-
-    }, [])
-    .reduce(function(acc, cur, idx, arr) {
-      // console.log(acc);
-      var matchFound = false;
-      if (acc.length > 0) {
-        // console.log('array has things in it');
-        for (var i = 0; i < acc.length; i++) {
-          if (acc[i].v === cur.v) {
-            // console.log('match found', cur);
-            matchFound = true;
-          }
-        }
-        // acc.push(cur);
-      }
-      if (matchFound) {
-        // console.log('match was found don\'t add to array', cur);
-      } else {
-        // console.log(cur, 'was pushed to array');
-        acc.push(cur);
-      }
-      return acc;
-
-    }, []);
-    console.log(tideValue);
-  };
-  var nextLowTide = function(tideArray) {
-    var tideValue = tideArray.reduce(function(acc, cur, idx, arr){
-      // console.log(cur);
-      var previousTide = idx -1;
-      var nextTide = idx + 1;
-      var wat = arr[nextTide];
-      // console.log('previous Tide Array',arr[previousTide][v]);
-      if(previousTide > 0 && nextTide < (arr.length)){
-        // console.log(cur.v, idx, previousTide, nextTide, wat.v);
-        // console.log(acc);
-        // console.log(arr.length);
-        if(parseFloat(cur.v) < parseFloat(arr[previousTide].v) && parseFloat(cur.v) < parseFloat(arr[nextTide].v)){
-          // console.log(cur.v, idx, arr[previousTide].v, arr[nextTide].v, cur.t);
-          acc.push(cur);
-        }
-      }
-      return acc;
-    },[]);
-    console.log(tideValue);
-    return tideValue;
   };
 
   module.tideData = tideData;
