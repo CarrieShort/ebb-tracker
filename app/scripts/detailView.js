@@ -11,14 +11,11 @@
   };
 
   detailView.map = function(ctx, next) {
+    console.log(ctx.lng);
+    console.log(ctx.lat);
 
-    next();
   };
 
-  detailView.map = function(ctx, next) {
-
-    next();
-  };
 
 
   module.detailView = detailView;

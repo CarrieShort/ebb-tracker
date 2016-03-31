@@ -23,6 +23,7 @@
     beaches.forEach(function(ele) {
       $('#detail').append(ele.toHtml($('#detail-template')));
     });
+    next();
   };
 
   Beach.addTideData = function(ctx,next){
@@ -43,6 +44,8 @@
           console.log(ele.name,ctx.filterByName);
           console.log(ele.stationID);
           ctx.stationID = ele.stationID;
+          ctx.lng = ele.longitude;
+          ctx.lat = ele.latitude;
           beaches.push(new Beach(ele));
         }
       });
