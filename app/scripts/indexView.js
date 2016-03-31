@@ -1,5 +1,5 @@
 (function(module) {
-  var indexView = {}
+  var indexView = {};
 
   indexView.index = function(ctx, next) {
     console.log('indexView');

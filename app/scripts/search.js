@@ -25,7 +25,13 @@
     });
   };
 
+  Beach.addTideData = function(ctx,next){
+    console.log('tide data',ctx.tideData);
+    console.log('beach',beaches[0]);
+    beaches[0].tideData=ctx.tideData;
+    next();
 
+  };
   Beach.loadAll = function(ctx, next) {
     console.log('loadAll');
     console.log('beachArray', beachData.beachArray);

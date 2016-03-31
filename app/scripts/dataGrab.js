@@ -134,7 +134,8 @@
       format: 'json'
     }).done(function(data) {
       var tides = JSON.parse(data);
-      tideData.detailTideResult = filterDetailTides(tides.predictions);
+      ctx.tideData = filterDetailTides(tides.predictions);
+      next();
     }).fail(function(e) {
       console.log('this is error', e);
     });
