@@ -14,16 +14,34 @@
     console.log('renderSearchResults');
     beaches.forEach(function(ele) {
       $('#index').append(ele.toHtml($('#beach-template')));
-    })
+    });
+  };
+
+  Beach.renderDetailView = function(ctx, next) {
+    console.log('renderDetailView');
+    beaches.forEach(function(ele) {
+      $('#detail').append(ele.toHtml($('#detail-template')));
+    });
   };
 
 
   Beach.loadAll = function(ctx, next) {
     console.log('loadAll');
-    console.log("beachArray", beachData.beachArray);
-    beachData.beachArray.forEach(function(ele) {
-      beaches.push(new Beach(ele));
-    })
+    console.log('beachArray', beachData.beachArray);
+    if(ctx.filterByName){
+      console.log('filter by stayed',ctx.filterByName);
+      beachData.beachArray.forEach(function(ele) {
+        console.log(ele.name);
+        if (ele.name === ctx.filterByName){
+          console.log(ele.name,ctx.filterByName);
+          beaches.push(new Beach(ele));
+        }
+      });
+    } else {
+      beachData.beachArray.forEach(function(ele) {
+        beaches.push(new Beach(ele));
+      });
+    }
     next();
   };
 
