@@ -13,15 +13,17 @@
   Beach.renderSearchResults = function(ctx, next) {
     console.log('renderSearchResults');
     beaches.forEach(function(ele) {
-      $('#index').append(ele.toHtml($('#beach-template')));
+      $('#index .result').empty();
+      $('#index .result').append(ele.toHtml($('#beach-template')));
     });
   };
 
   Beach.renderDetailView = function(ctx, next) {
     console.log('renderDetailView');
-    console.log(beaches);
+    console.log('this is beaches',beaches);
     beaches.forEach(function(ele) {
-      $('#detail').append(ele.toHtml($('#detail-template')));
+      $('#detail #map2').insertAfter( '#detail' );
+      $('#detail').empty().append(ele.toHtml($('#detail-template')));
     });
     next();
   };
@@ -35,10 +37,13 @@
 
   };
   Beach.loadAll = function(ctx, next) {
+    beaches = [];
+    console.log('this is beaches after i cleared array',beaches);
     console.log('loadAll');
     console.log('beachArray', beachData.beachArray);
     if(ctx.filterByName){
       console.log('filter by stayed',ctx.filterByName);
+      console.log('matching beach data', beachData.beachArray);
       beachData.beachArray.forEach(function(ele) {
         console.log(ele.name);
         if (ele.name === ctx.filterByName){
