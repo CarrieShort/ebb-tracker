@@ -1,6 +1,6 @@
 (function(module) {
   $('body').on('click','.beach-summary',function(){
-    var clickedBeach = $(this).data('destination').replace(' ','-');
+    var clickedBeach = $(this).data('destination').replace(/\s/g,'-');
     var lng = $(this).data('lng');
     var lat = $(this).data('lat');
     if(lng){

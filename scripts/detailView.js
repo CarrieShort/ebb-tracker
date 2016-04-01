@@ -6,7 +6,7 @@
     $('#map').hide();
     $('#detail').show();
     var beachname = ctx.params.name;
-    ctx.filterByName = beachname.replace('-', ' ');
+    ctx.filterByName = beachname.replace(/-/g , ' ');
     ctx.userLat = parseFloat(ctx.params.lat);
     ctx.userLng = parseFloat(ctx.params.lng);
     next();

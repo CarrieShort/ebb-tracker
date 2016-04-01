@@ -20,7 +20,7 @@
 
   locationView.populateFilters = function(ctx, next) {
     beachNameArray.map(function(cur, idx, arr) {
-      var destination = cur.replace(' ', '_');
+      var destination = cur.replace(/\s/g,'-');
       var option = '<option value="' + destination + '">' + cur + '</option>';
       $('.chosen-select').append(option);
       return option;
