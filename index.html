@@ -14,7 +14,7 @@
 
   <script id="beach-template" type="text/x-handlebars-template">
     {{#if name}}
-    <article data-destination="{{name}}" class="beach-summary">
+    <article data-destination="{{name}}" data-lng="{{userLng}}" data-lat="{{userLat}}" class="beach-summary">
     <h2>{{name}}</h2>
       {{#each tideData}}
       <p><span class="tide">{{v}}<span> <span class="time"><i class="fa fa-clock-o"></i>{{time}}</span></p>

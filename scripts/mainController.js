@@ -1,8 +1,17 @@
 (function(module) {
   $('body').on('click','.beach-summary',function(){
     var clickedBeach = $(this).data('destination').replace(' ','-');
-    location.href = 'beach/'+clickedBeach;
-    console.log(clickedBeach);
+    var lng = $(this).data('lng');
+    var lat = $(this).data('lat');
+    console.log('this has stuff',$(this).data('destination'));
+    if(lng){
+      console.log('lng present');
+      location.href = 'beach/'+clickedBeach+'/'+lng+'/'+lat;
+    } else {
+      console.log('lng not present');
+      location.href = 'beach/'+clickedBeach;
+      console.log(clickedBeach);
+    }
   });
   var beaches = [];
 
@@ -22,6 +31,8 @@
     console.log('beaches', Beach.all);
     $('#index .result').empty();
     Beach.all.forEach(function(ele) {
+      ele.userLng = mainView.userLng;
+      ele.userLat = mainView.userLat;
       console.log('ele', ele);
       $('#index .result').append(ele.toHtml($('#beach-template')));
     });
