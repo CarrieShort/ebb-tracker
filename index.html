@@ -12,11 +12,14 @@
 
   <script id="beach-template" type="text/x-handlebars-template">
     {{#if name}}
+    <article data-destination="{{name}}" class="beach-summary">
     <h2>{{name}}</h2>
-
-    <p>{{distance}} {{time}} </p>
+      {{#each tideData}}
+      <p><span class="tide">{{v}}<span> <span class="time"><i class="fa fa-clock-o"></i>{{time}}</span></p>
+      {{/each}}
     {{else}}
     <p>There are no beaches near you please change your location.</p>
+    </article>
     {{/if}}
   </script>
 

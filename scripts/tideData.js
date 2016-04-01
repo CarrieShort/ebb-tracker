@@ -89,6 +89,9 @@
 
       if(previousTide > 0 && nextTide < (arr.length)){
         if(parseFloat(cur.v) < parseFloat(arr[previousTide].v) && parseFloat(cur.v) < parseFloat(arr[nextTide].v)){
+          var splitDate = cur.t.split(' ');
+          cur.time = splitDate[1];
+          cur.day = splitDate[0];
           acc.push(cur);
         }
       }
@@ -98,7 +101,7 @@
   };
 
   // Need to find next Low Tide, 12 hour increments
-  tideData.nextLowTideData = function(stationID, idx) {
+  tideData.nextLowTideData = function(stationID, idx,ele,callback) {
     console.log('nextLowTideData ran',indexController.closeBeaches[idx]);
     var today = date();
     var time = timeStamp();
@@ -116,6 +119,9 @@
       var tides = JSON.parse(data);
       // tideData.nextTideResult = filterNextLowTide(tides.predictions);
       indexController.closeBeaches[idx].tideData = filterNextLowTide(tides.predictions);
+      console.log('this is ele',ele);
+      Beach.all.push(new Beach(ele));
+      callback();
     }).fail(function(e) {
       console.log('this is error', e);
     });
