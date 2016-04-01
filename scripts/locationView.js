@@ -29,7 +29,7 @@
 
   $('.chosen-select').on('change', function(){
     var selectedBeach = $('.result-selected').toArray();
-    var mapped =things.map(function(cur){
+    var mapped =selectedBeach.map(function(cur){
       return cur.textContent;
     });
     mapped.forEach(function(cur){
