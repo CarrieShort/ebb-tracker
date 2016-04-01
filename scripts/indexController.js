@@ -13,7 +13,7 @@
       var userLowerLng = mainView.userLng * 1000000000 - range;
       var userUpperLng = mainView.userLng * 1000000000 + range;
 
-      return (parkLat > userLowerLat && parkLat < userUpperLat), (parkLng > userLowerLng && parkLng < userUpperLng);
+      return (parkLat > userLowerLat && parkLat < userUpperLat) && (parkLng > userLowerLng && parkLng < userUpperLng);
     });
   };
 
