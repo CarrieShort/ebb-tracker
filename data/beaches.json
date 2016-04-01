@@ -1,24 +1,113 @@
 {
-  "beaches": [
-    {"name": "Carkeek Park",
-      "longitude": "-122.372298",
-      "latitude": "47.712489",
-      "stationID": "9447130",
-      "url": "http://www.seattle.gov/parks/environment/carkeek.htm"
-    },
-     {"name": "Golden Gardens",
-      "longitude": "-122.402293",
-      "latitude": "47.689707",
-      "stationID": "9447130",
-      "url": "http://www.seattle.gov/parks/park_detail.asp?id=243"
-    },
-     {"name": "Discovery Park",
-      "longitude": "-122.416435",
-      "latitude": "47.666362",
-      "stationID": "9447130",
-      "url": "http://www.seattle.gov/parks/environment/discovery.htm"
-    }
-  ],
+  "beaches": [{
+    "name": "Carkeek Park",
+    "longitude": "-122.372298",
+    "latitude": "47.712489",
+    "stationID": "9447130",
+    "url": "http://www.seattle.gov/parks/environment/carkeek.htm"
+  }, {
+    "name": "Golden Gardens",
+    "longitude": "-122.402293",
+    "latitude": "47.689707",
+    "stationID": "9447130",
+    "url": "http://www.seattle.gov/parks/park_detail.asp?id=243"
+  }, {
+    "name": "Discovery Park",
+    "longitude": "-122.416435",
+    "latitude": "47.666362",
+    "stationID": "9447130",
+    "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+  } {
+    "name": "Grayland Beach State parks",
+    "longitude": "-124.0910",
+    "latitude": "46.7868",
+    "stationID": "9441102",
+    "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+  } {
+    "name": "Birch Bay parks",
+    "longitude": "-122.738463",
+    "latitude": "48.896452",
+    "stationID": "9449419",
+    "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+  } {
+    "name": "Point No Point",
+    "longitude": "-122.5259781",
+    "latitude": "47.9120382",
+    "stationID": "9447130",
+    "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+  } {
+    "name": "Bowman Hill",
+    "longitude": "-122.6412822",
+    "latitude": "48.4134358",
+    "stationID": "9448682",
+    "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+  } {
+    "name": "Gene Coulon Memorial Beach ",
+    "longitude": "-122.2031773",
+    "latitude": "47.5095442",
+    "stationID": "9447130",
+    "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+  } {
+    "name": "Jetty island",
+    "longitude": "-122.2290262",
+    "latitude": "47.006762",
+    "stationID": "9447130",
+    "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+  } {
+    "name": "Scenic Beach State parks",
+    "longitude": "-122.8455",
+    "latitude": "47.6493",
+    "stationID": "9447130",
+    "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+  } {
+    "name": "Owen beach",
+    "longitude": "-122.528464",
+    "latitude": "47.312994",
+    "stationID": "9446482",
+    "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+  } {
+    "name": "Denny Blaine Park",
+    "longitude": "-122.2929491",
+    "latitude": "47.6077617",
+    "stationID": "9447130",
+    "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+  } {
+    "name": "Kolaloch Rocks",
+    "longitude": "-124.3788054",
+    "latitude": "47.6020241",
+    "stationID": "9442396",
+    "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+  } {
+    "name": "Long Beach Peninsula",
+    "longitude": "-124.035592",
+    "latitude": "46.34895",
+    "stationID": "9442396",
+    "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+  } {
+    "name": "Me-Kwa-Mooks",
+    "longitude": "-122.4042",
+    "latitude": "47.5635",
+    "stationID": "9447130",
+    "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+  } {
+    "name": "Marine View parks",
+    "longitude": "-122.347",
+    "latitude": "47.4282",
+    "stationID": "9447130",
+    "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+  } {
+    "name": "Ocean Shores",
+    "longitude": "-124.152325",
+    "latitude": "46.970248",
+    "stationID": "9441102",
+    "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+  } {
+    "name": "Squalicum Beach Park",
+    "longitude": "-122.505448",
+    "latitude": "48.7559414",
+    "stationID": "9448682",
+    "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+  } ],
   "ratings": {
     "Carkeek Park": {
       "1star": "10",

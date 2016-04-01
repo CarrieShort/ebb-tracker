@@ -7,7 +7,7 @@
     $('#map').hide();
     $('#detail').show();
     var beachname = ctx.params.name;
-    ctx.filterByName = beachname.replace('_', ' ');
+    ctx.filterByName = beachname.replace('-', ' ');
     next();
   };
 
