@@ -1,6 +1,7 @@
 header {
   background-color: #4D73B8;
   width: 100%;
+  position: relative;
 }
 
 h1 {
