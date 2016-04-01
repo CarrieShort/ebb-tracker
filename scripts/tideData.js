@@ -5,15 +5,15 @@
   var today = new Date();
   var jsonUrl = '/tides/';
 
-    var date = function() {
+  var date = function() {
     today;
     var mm = '0' + (today.getMonth() + 1);
     var day = '0' + (today.getDate());
     var year = today.getFullYear();
-    if (mm > 10) {
+    if (mm > 9) {
       mm = today.getMonth() + 1;
     }
-    if (day > 10) {
+    if (day > 9) {
       day = today.getDate();
     }
     var newDate = year + mm + day;
@@ -23,10 +23,10 @@
   var timeStamp = function() {
     var hh = '0' + (today.getHours());
     var mi = '0' + (today.getMinutes());
-    if (hh > 10) {
+    if (hh > 9) {
       hh = today.getHours();
     }
-    if (mi > 10) {
+    if (mi > 9) {
       mi = today.getMinutes();
     }
     var newtimeStamp = hh + ':' + mi;
@@ -59,22 +59,21 @@
       }
       return acc;
     }, [])
-    .reduce(function(acc, cur, idx, arr) {
-      var matchFound = false;
-      if (acc.length > 0) {
-        for (var i = 0; i < acc.length; i++) {
-          if (acc[i].v === cur.v) {
-            matchFound = true;
+      .reduce(function(acc, cur, idx, arr) {
+        var matchFound = false;
+        if (acc.length > 0) {
+          for (var i = 0; i < acc.length; i++) {
+            if (acc[i].v === cur.v) {
+              matchFound = true;
+            }
           }
         }
-      }
-      if (matchFound) {
-      } else {
-        acc.push(cur);
-      }
-      return acc;
-    }, []);
-    return(tideValue);
+        if (matchFound) {} else {
+          acc.push(cur);
+        }
+        return acc;
+      }, []);
+    return (tideValue);
   };
 
   var filterNextLowTide = function(tideArray) {
@@ -97,25 +96,24 @@
       }
       return acc;
     }, [])
-    .reduce(function(acc, cur, idx, arr) {
-      var matchFound = false;
-      if (acc.length > 0) {
-        for (var i = 0; i < acc.length; i++) {
-          if (acc[i].v === cur.v) {
-            matchFound = true;
+      .reduce(function(acc, cur, idx, arr) {
+        var matchFound = false;
+        if (acc.length > 0) {
+          for (var i = 0; i < acc.length; i++) {
+            if (acc[i].v === cur.v) {
+              matchFound = true;
+            }
           }
         }
-      }
-      if (matchFound) {
-      } else {
-        acc.push(cur);
-      }
-      return acc;
-    }, []);
-    return(tideValue);
+        if (matchFound) {} else {
+          acc.push(cur);
+        }
+        return acc;
+      }, []);
+    return (tideValue);
   };
 
-  tideData.nextLowTideData = function(stationID, idx,ele,callback) {
+  tideData.nextLowTideData = function(stationID, idx, ele, callback) {
     var today = date();
     var time = timeStamp();
     $.get(jsonUrl, {
@@ -132,11 +130,10 @@
       indexController.closeBeaches[idx].tideData = filterNextLowTide(tides.predictions);
       Beach.all.push(new Beach(ele));
       callback();
-    }).fail(function(e) {
-    });
+    }).fail(function(e) {});
   };
 
-  tideData.detailTideData = function(ctx,next) {
+  tideData.detailTideData = function(ctx, next) {
     var today = date();
     $.get(jsonUrl, {
       begin_date: today,
@@ -151,8 +148,7 @@
       var tides = JSON.parse(data);
       ctx.tideData = filterDetailTides(tides.predictions);
       next();
-    }).fail(function(e) {
-    });
+    }).fail(function(e) {});
   };
 
   module.tideData = tideData;
