@@ -96,7 +96,6 @@
     Beach.all = [];
     $('#index .result').empty();
     if(indexController.closeBeaches.length > 0){
-      console.log('close beaches is happening');
       indexController.closeBeaches.forEach(function(ele, idx, arr) {
         var stationID = ele.stationID;
         tideData.nextLowTideData(stationID, idx,ele,callback);

@@ -18,7 +18,7 @@
       var userAddress = {lat: ctx.userLat, lng: ctx.userLng};
 
     } else{
-      // if no user data passed use Seattle
+      // If no user data is passed use Seattle
       var userAddress = {lat: 47.607819, lng: -122.332137};
     }
     var beachAdress = {lat: parseFloat(ctx.lat), lng: parseFloat(ctx.lng)};
@@ -33,18 +33,15 @@
       map: detailMap
     });
 
-    // Set destination, origin and travel mode.
     var request = {
       destination: beachAdress,
       origin: userAddress,
       travelMode: google.maps.TravelMode.DRIVING
     };
 
-    // Pass the directions request to the directions service.
     var directionsService = new google.maps.DirectionsService();
     directionsService.route(request, function(response, status) {
       if (status == google.maps.DirectionsStatus.OK) {
-        // Display the route on the map.
         directionsDisplay.setDirections(response);
       }
     });
