@@ -55,10 +55,10 @@
       });
 
       // Create a marker and set its position.
-      var marker = new google.maps.Marker({
+      var userMarker = new google.maps.Marker({
         map: map,
         position: myLatLng,
-        title: 'Hello World!'
+        title: 'You are Here'
       });
 
       next();
