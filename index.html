@@ -9,15 +9,17 @@
   <link rel="stylesheet" type="text/css" href="/styles/base/base.css">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Italianno">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="/styles/module/header.css">
   <link rel="stylesheet" type="text/css" href="/styles/layout/layout.css">
+  <link rel="stylesheet" type="text/css" href="/styles/module/header.css">
+  <link rel="stylesheet" type="text/css" href="/styles/module/beach-summary.css">
+
 
   <script id="beach-template" type="text/x-handlebars-template">
     {{#if name}}
     <article data-destination="{{name}}" data-lng="{{userLng}}" data-lat="{{userLat}}" class="beach-summary">
     <h2>{{name}}</h2>
       {{#each tideData}}
-      <p><span class="tide">{{v}}<span> <span class="time"><i class="fa fa-clock-o"></i>{{time}}</span></p>
+      <p><span class="tide">{{v}}ft</span> <span class="time"><i class="fa fa-clock-o"></i>{{time}}</span></p>
       {{/each}}
     {{else}}
     <p>There are no beaches near you please change your location.</p>
