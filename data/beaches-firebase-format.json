@@ -41,7 +41,7 @@
         "name": "Birch Bay Park",
         "longitude": "-122.7664776",
         "latitude": "48.9045338",
-        "stationID": "9449419",
+        "stationID": "9448682",
         "url": "http://parks.state.wa.us/170/Birch-Bay"
       }
     },
@@ -95,7 +95,7 @@
         "name": "Owen Beach",
         "longitude": "-122.5309413",
         "latitude": "47.3133588",
-        "stationID": "9446482",
+        "stationID": "9446484",
         "url": "http://www.metroparkstacoma.org/point-d-owen-beach/"
       }
     },
@@ -128,7 +128,7 @@
     },
     "10" : {
       "beach" : {
-        "name": "Me-Kwa-Mooks",
+        "name": "Me Kwa Mooks",
         "longitude": "-122.4064416",
         "latitude": "47.5634547",
         "stationID": "9447130",
