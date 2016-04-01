@@ -5,8 +5,9 @@
   locationView.index = function(ctx, next) {
     console.log('locationView');
     $('section').hide();
-    $('#location').show();
     $('#location-result').show();
+    $('#location').show();
+    // $('#location-result').find('h2').hide();
     next();
   };
 
@@ -23,7 +24,7 @@
     beachNameArray.map(function(cur, idx, arr) {
       var destination = cur.replace(' ', '_');
       console.log('hello',destination);
-      var option = '<option value="' + destination + '"> ' + cur + ' </option>';
+      var option = '<option value="' + destination + '">' + cur + '</option>';
       console.log('i',option);
       $('.chosen-select').append(option);
       return option;
@@ -32,6 +33,22 @@
     next();
   };
 
+  $('.chosen-select').on('change', function(){
+    // console.log('this',$('.result-selected').toArray().text);
+    var things = $('.result-selected').toArray();
+    console.log(things);
+    var mapped =things.map(function(cur){
+      // console.log('i hate this', cur.textContent);
+      return cur.textContent;
+    });
+    console.log('this is mapped', mapped);
+    mapped.forEach(function(cur){
+      console.log('.beach-title:contains("'+ cur +'")');
+      $('.beach-title:contains("'+ cur +'")').show();
+    });
+    console.log('this is things',things);
+    // $(this).find('.beach-title').show();
+  });
   // locationView.showSelectedBeach = function(ctx, next) {
   //
   // };

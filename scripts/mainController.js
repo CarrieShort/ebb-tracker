@@ -25,6 +25,7 @@
     beaches.forEach(function(ele) {
       $('#location-result').append(ele.toHtml($('#map-template')));
     });
+    $('#location-result').find('h2').hide();
   };
 
   Beach.renderDetailView = function(ctx, next) {
