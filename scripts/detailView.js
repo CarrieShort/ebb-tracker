@@ -8,14 +8,23 @@
     $('#detail').show();
     var beachname = ctx.params.name;
     ctx.filterByName = beachname.replace('-', ' ');
+    ctx.userLat = parseFloat(ctx.params.lat);
+    ctx.userLng = parseFloat(ctx.params.lng);
     next();
   };
 
   detailView.map = function(ctx, next) {
     console.log(ctx.lng);
     console.log(ctx.lat);
+    console.log('getting user lat lang', mainView.userLat, mainView.userLng);
+    if (ctx.userLat){
+      console.log({lat: ctx.userLat, lng: ctx.userLng});
+      var userAddress = {lat: ctx.userLat, lng: ctx.userLng};
 
-    var userAddress = {lat: 41.85, lng: -87.65};
+    } else{
+      // if no user data passed use Seattle
+      var userAddress = {lat: 47.607819, lng: -122.332137};
+    }
     var beachAdress = {lat: parseFloat(ctx.lat), lng: parseFloat(ctx.lng)};
 
     var map2 = new google.maps.Map(document.getElementById('map2'), {
