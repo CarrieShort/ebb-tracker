@@ -14,6 +14,8 @@
   <link rel="stylesheet" type="text/css" href="/styles/module/header.css">
   <link rel="stylesheet" type="text/css" href="/styles/module/beach-summary.css">
   <link rel="stylesheet" type="text/css" href="/styles/module/beach-detail.css">
+  <link rel="stylesheet" type="text/css" href="/styles/module/location-view.css">
+  <link rel="stylesheet" type="text/css" href="/styles/state/hover.css">
 
 
   <script id="beach-template" type="text/x-handlebars-template">
@@ -54,8 +56,6 @@
     </article>
     {{/if}}
   </script>
-
-  <!-- <base href="/"> -->
 </head>
 
 <body>
@@ -65,17 +65,9 @@
       <span class="topTitle">Ebb</span>
       <span class="bottomTitle">Tracker</span></a>
     </h1>
-    <!-- <i class="fa fa-bars fa-5x"></i> -->
     <a href="/location" <i class="fa fa-search fa-2x"></i>
     </a>
   </header>
-
-  <!-- <nav>
-    <ul>
-      <li><a href='/'>Home</a></li>
-      <li><a href='/location'>Search All Beaches</a></li>
-    </ul>
-  </nav> -->
 
   <!--Home Page Section-->
   <section id="index">
@@ -88,7 +80,7 @@
   <!--Location Section-->
   <section id="location" class="nav-content">
     <h2>Search Tide Pooling Locations</h2>
-    <select multiple class="chosen-select" style="width:80%;" type="text" placeholder="Check for a Beach Nearby"></select>
+    <select multiple class="chosen-select" type="text" placeholder="Check for a Beach Nearby"></select>
     <section id="location-result"></section>
   </section>
 

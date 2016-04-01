@@ -1,0 +1,8 @@
+.beach-summary:hover {
+  background: #4D73B8;
+  color: #fff;
+}
+
+.beach-summary:hover h2{
+  color: #fff;
+}

@@ -34,15 +34,6 @@
   padding-right: 5px;
 }
 
-.beach-summary:hover {
-  background: #4D73B8;
-  color: #fff;
-}
-
-.beach-summary:hover h2{
-  color: #fff;
-}
-
 @media screen and (min-width: 800px){
   #index .beach-summary{
     width: 48%;

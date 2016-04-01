@@ -5,9 +5,7 @@
   var today = new Date();
   var jsonUrl = '/tides/';
 
-  // helper functions
-  // return today's date format YYYYMMDD
-  var date = function() {
+    var date = function() {
     today;
     var mm = '0' + (today.getMonth() + 1);
     var day = '0' + (today.getDate());
@@ -22,7 +20,6 @@
     return newDate;
   };
 
-  // return current time format HH:MM
   var timeStamp = function() {
     var hh = '0' + (today.getHours());
     var mi = '0' + (today.getMinutes());
@@ -36,7 +33,6 @@
     return newtimeStamp;
   };
 
-  // return array of filtered results
   var filterDetailTides = function(tideArray) {
     var tideValue = tideArray.reduce(function(acc, cur, idx, arr) {
       var previousTideIndex = idx - 1;
@@ -81,7 +77,6 @@
     return(tideValue);
   };
 
-  //return array of filtered results
   var filterNextLowTide = function(tideArray) {
     var tideValue = tideArray.reduce(function(acc, cur, idx, arr) {
       var previousTideIndex = idx - 1;
@@ -120,7 +115,6 @@
     return(tideValue);
   };
 
-  // Need to find next Low Tide, 12 hour increments
   tideData.nextLowTideData = function(stationID, idx,ele,callback) {
     var today = date();
     var time = timeStamp();
@@ -135,17 +129,13 @@
       format: 'json'
     }).done(function(data) {
       var tides = JSON.parse(data);
-      console.log(tides.predictions);
-      // tideData.nextTideResult = filterNextLowTide(tides.predictions);
       indexController.closeBeaches[idx].tideData = filterNextLowTide(tides.predictions);
-      console.log(Beach.all,filterNextLowTide(tides.predictions));
       Beach.all.push(new Beach(ele));
       callback();
     }).fail(function(e) {
     });
   };
 
-  // return high and low tides over next 72 hours from start date
   tideData.detailTideData = function(ctx,next) {
     var today = date();
     $.get(jsonUrl, {

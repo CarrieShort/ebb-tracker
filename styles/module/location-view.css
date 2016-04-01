@@ -1,0 +1,11 @@
+.search-choice {
+  font-size: 1.3em;
+}
+
+.chosen-container-multi .chosen-choices {
+  padding: 5px;
+}
+
+.chosen-container[style] {
+  width: 100% !important;
+}
