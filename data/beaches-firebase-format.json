@@ -29,137 +29,137 @@
     },
     "-KE71h8yigiHbASc0fpk" : {
       "beach" : {
-        "name": "Grayland Beach State parks",
-        "longitude": "-124.0910",
-        "latitude": "46.7868",
+        "name": "Grayland Beach State Park",
+        "longitude": "-124.091305",
+        "latitude": "46.786784",
         "stationID": "9441102",
-        "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+        "url": "http://parks.state.wa.us/515/Grayland-Beach"
       }
     },
     "-KE71id6brzOcMONwuMk" : {
       "beach" : {
-        "name": "Birch Bay parks",
-        "longitude": "-122.738463",
-        "latitude": "48.896452",
+        "name": "Birch Bay Park",
+        "longitude": "-122.7664776",
+        "latitude": "48.9045338",
         "stationID": "9449419",
-        "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+        "url": "http://parks.state.wa.us/170/Birch-Bay"
       }
     },
     "1" : {
       "beach" : {
         "name": "Point No Point",
-        "longitude": "-122.5259781",
-        "latitude": "47.9120382",
+        "longitude": "-122.5298516",
+        "latitude": "47.9118655",
         "stationID": "9447130",
-        "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+        "url": "http://www.kitsapgov.com/parks/Parks/Pages/regionalparks/point_no_point.htm"
       }
     },
     "2" : {
       "beach" : {
         "name": "Bowman Hill",
-        "longitude": "-122.6412822",
-        "latitude": "48.4134358",
+        "longitude": "-122.6588347",
+        "latitude": "48.4134624",
         "stationID": "9448682",
-        "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+        "url": "http://www.deceptionpassfoundation.org/around-the-park/bowman-bay/"
       }
     },
     "3" : {
       "beach" : {
-        "name": "Gene Coulon Memorial Beach ",
-        "longitude": "-122.2031773",
-        "latitude": "47.5095442",
+        "name": "Gene Coulon Memorial Beach",
+        "longitude": "-122.2044306",
+        "latitude": "47.5038267",
         "stationID": "9447130",
-        "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+        "url": "https://rentonwa.gov/living/default.aspx?id=74"
       }
     },
     "4" : {
       "beach" : {
-        "name": "Jetty island",
-        "longitude": "-122.2290262",
-        "latitude": "47.006762",
+        "name": "Jetty Island",
+        "longitude": "-122.2308938",
+        "latitude": "48.0036175",
         "stationID": "9447130",
-        "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+        "url": "http://www.portofeverett.com/recreation/beaches-kiteboarding/jetty-island-290"
       }
     },
     "5" : {
       "beach" : {
-        "name": "Scenic Beach State parks",
-        "longitude": "-122.8455",
-        "latitude": "47.6493",
+        "name": "Scenic Beach State Park",
+        "longitude": "-122.8539443",
+        "latitude": "47.642704",
         "stationID": "9447130",
-        "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+        "url": "http://parks.state.wa.us/579/Scenic-Beach"
       }
     },
     "6" : {
       "beach" : {
-        "name": "Owen beach",
-        "longitude": "-122.528464",
-        "latitude": "47.312994",
+        "name": "Owen Beach",
+        "longitude": "-122.5309413",
+        "latitude": "47.3133588",
         "stationID": "9446482",
-        "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+        "url": "http://www.metroparkstacoma.org/point-d-owen-beach/"
       }
     },
     "7" : {
       "beach" : {
         "name": "Denny Blaine Park",
-        "longitude": "-122.2929491",
-        "latitude": "47.6077617",
+        "longitude": "-122.2823583",
+        "latitude": "47.6201211",
         "stationID": "9447130",
-        "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+        "url": "http://www.seattle.gov/parks/park_detail.asp?ID=3982"
       }
     },
     "8" : {
       "beach" : {
-        "name": "Kolaloch Rocks",
-        "longitude": "-124.3788054",
-        "latitude": "47.6020241",
+        "name": "Ruby Beach",
+        "longitude": "-124.432912",
+        "latitude": "47.7108715",
         "stationID": "9442396",
-        "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+        "url": "https://www.nps.gov/olym/planyourvisit/visiting-kalaloch-and-ruby-beach.htm"
       }
     },
     "9" : {
       "beach" : {
         "name": "Long Beach Peninsula",
-        "longitude": "-124.035592",
-        "latitude": "46.34895",
+        "longitude": "-124.077225",
+        "latitude": "46.301437",
         "stationID": "9442396",
-        "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+        "url": "https://funbeach.com"
       }
     },
     "10" : {
       "beach" : {
         "name": "Me-Kwa-Mooks",
-        "longitude": "-122.4042",
-        "latitude": "47.5635",
+        "longitude": "-122.4064416",
+        "latitude": "47.5634547",
         "stationID": "9447130",
-        "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+        "url": "http://www.seattle.gov/parks/park_detail.asp?ID=473"
       }
     },
     "11" : {
       "beach" : {
-        "name": "Marine View parks",
-        "longitude": "-122.347",
-        "latitude": "47.4282",
+        "name": "Marine View Park",
+        "longitude": "-122.3437396",
+        "latitude": "47.4137398",
         "stationID": "9447130",
-        "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+        "url": "http://www.ci.normandy-park.wa.us/vertical/Sites/%7BD313ED69-120E-439F-83D7-8BBE7447C948%7D/uploads/%7BFCD25EA8-D297-42A6-A716-60D9CF39DA1C%7D.PDF"
       }
     },
     "12" : {
       "beach" : {
         "name": "Ocean Shores",
-        "longitude": "-124.152325",
-        "latitude": "46.970248",
+        "longitude": "-124.176817",
+        "latitude": "46.9856296",
         "stationID": "9441102",
-        "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+        "url": "http://www.osgov.com/Parks.html"
       }
     },
     "13" : {
       "beach" : {
         "name": "Squalicum Beach Park",
-        "longitude": "-122.505448",
-        "latitude": "48.7559414",
+        "longitude": "-122.5152702",
+        "latitude": "48.7629009",
         "stationID": "9448682",
-        "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+        "url": "https://www.cob.org/services/recreation/parks-trails/Pages/little-squalicum-park.aspx"
       }
     }
   },
