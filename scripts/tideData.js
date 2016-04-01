@@ -102,10 +102,8 @@
 
   // Need to find next Low Tide, 12 hour increments
   tideData.nextLowTideData = function(stationID, idx,ele,callback) {
-    console.log('nextLowTideData ran',indexController.closeBeaches[idx]);
     var today = date();
     var time = timeStamp();
-    console.log(today);
     $.get(jsonUrl, {
       begin_date: today + ' ' + time,
       range: 12,
@@ -119,18 +117,15 @@
       var tides = JSON.parse(data);
       // tideData.nextTideResult = filterNextLowTide(tides.predictions);
       indexController.closeBeaches[idx].tideData = filterNextLowTide(tides.predictions);
-      console.log('this is ele',ele);
       Beach.all.push(new Beach(ele));
       callback();
     }).fail(function(e) {
-      console.log('this is error', e);
     });
   };
 
   // return high and low tides over next 72 hours from start date
   tideData.detailTideData = function(ctx,next) {
     var today = date();
-    console.log(today);
     $.get(jsonUrl, {
       begin_date: today,
       range: 72,
@@ -141,14 +136,10 @@
       time_zone: 'gmt',
       format: 'json'
     }).done(function(data) {
-      console.log('firebase choke');
-      console.log(data);
       var tides = JSON.parse(data);
-      console.log('firebase choke');
       ctx.tideData = filterDetailTides(tides.predictions);
       next();
     }).fail(function(e) {
-      console.log('this is error', e);
     });
   };
 
