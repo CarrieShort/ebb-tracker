@@ -16,7 +16,7 @@
         var key = childSnapshot.key();
         // childData will be the actual contents of the child
         var childData = childSnapshot.val();
-        beachData.beachArray.push(childData.exampleUpdate);
+        beachData.beachArray.push(childData.beach);
       });
       next();
     });
