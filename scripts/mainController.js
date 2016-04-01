@@ -88,7 +88,7 @@
         }
       });
     } else {
-      indexController.closeBeaches.forEach(function(ele) {
+      beachData.beachArray.forEach(function(ele) {
         beaches.push(new Beach(ele));
       });
     }

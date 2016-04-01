@@ -41,7 +41,9 @@
 
   <script id="map-template" type="text/x-handlebars-template">
     {{#if name}}
+    <article data-destination="{{name}}" class="beach-summary">
     <h2 class="beach-title">{{name}}</h2>
+  </article>
     {{/if}}
   </script>
 
