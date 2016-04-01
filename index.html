@@ -4,6 +4,8 @@
 <head>
   <title>Ebb Tracker - Mobile app for tracking tides and tide pooling locations</title>
   <link rel="stylesheet" type="text/css" href="/vendor/styles/reset.css">
+  <link rel="stylesheet" type="text/css" href="/vendor/styles/chosen.min.css">
+
   <link rel="stylesheet" type="text/css" href="/styles/base/base.css">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Italianno">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -37,6 +39,7 @@
   <script id="map-template" type="text/x-handlebars-template">
     {{#if name}}
     <h2 class="beach-title">{{name}}</h2>
+    {{/if}}
   </script>
 
   <!-- <base href="/"> -->
@@ -76,7 +79,8 @@
   <!--Location Section-->
   <section id="location" class="nav-content">
     <h1>Location</h1>
-    <select class="chosen-select" style="width:80%;" type="text" placeholder="Check for a Beach Nearby"></select>
+    <select multiple class="chosen-select" style="width:80%;" type="text" placeholder="Check for a Beach Nearby"></select>
+    <section id="location-result"></section>
     <ul>
       <li><i class="fa fa-clock-o"></i>1<i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i></li>
       <li><i class="fa fa-clock-o">2</i></li>
