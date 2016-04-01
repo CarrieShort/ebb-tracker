@@ -4,6 +4,7 @@
 
   locationView.index = function(ctx, next) {
     $('section').hide();
+    $('#detailMap').hide();
     $('#location-result').show();
     $('#location').show();
     next();
@@ -33,7 +34,7 @@
       return cur.textContent;
     });
     mapped.forEach(function(cur){
-      $('.beach-title:contains("'+ cur +'")').show();
+      $('.beach-summary:contains("'+ cur +'")').show();
     });
   });
 

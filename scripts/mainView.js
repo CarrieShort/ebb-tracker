@@ -6,7 +6,7 @@
 
   mainView.index = function(ctx, next) {
     $('section').hide();
-    $('#map2').hide();
+    $('#detailMap').hide();
     $('#map').show();
     $('#index .result').show();
     $('#index').show();

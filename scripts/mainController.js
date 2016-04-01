@@ -42,13 +42,13 @@
     beaches.forEach(function(ele) {
       $('#location-result').append(ele.toHtml($('#map-template')));
     });
-    $('#location-result').find('h2').hide();
+    $('#location-result').find('.beach-summary').hide();
   };
 
   Beach.renderDetailView = function(ctx, next) {
 
     beaches.forEach(function(ele) {
-      $('#detail #map2').insertAfter('#detail');
+      $('#detail #detailMap').insertAfter('#detail');
       $('#detail').empty().append(ele.toHtml($('#detail-template')));
     });
     next();
@@ -96,6 +96,7 @@
     Beach.all = [];
     $('#index .result').empty();
     if(indexController.closeBeaches.length > 0){
+      console.log('close beaches is happening');
       indexController.closeBeaches.forEach(function(ele, idx, arr) {
         var stationID = ele.stationID;
         tideData.nextLowTideData(stationID, idx,ele,callback);
