@@ -3,6 +3,7 @@
 
 <head>
   <title>Ebb Tracker - Mobile app for tracking tides and tide pooling locations</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="/vendor/styles/reset.css">
   <link rel="stylesheet" type="text/css" href="/vendor/styles/chosen.min.css">
 
@@ -12,17 +13,16 @@
   <link rel="stylesheet" type="text/css" href="/styles/layout/layout.css">
   <link rel="stylesheet" type="text/css" href="/styles/module/header.css">
   <link rel="stylesheet" type="text/css" href="/styles/module/beach-summary.css">
+  <link rel="stylesheet" type="text/css" href="/styles/module/beach-detail.css">
 
 
   <script id="beach-template" type="text/x-handlebars-template">
     {{#if name}}
     <article data-destination="{{name}}" data-lng="{{userLng}}" data-lat="{{userLat}}" class="beach-summary">
-    <h2>{{name}}</h2>
-      {{#each tideData}}
+      <h2>{{name}}</h2> {{#each tideData}}
       <p><span class="tide">{{v}}ft</span> <span class="time"><i class="fa fa-clock-o"></i>{{time}}</span></p>
-      {{/each}}
-    {{else}}
-    <p>There are no beaches near you please change your location.</p>
+      {{/each}} {{else}}
+      <p>There are no beaches near you please change your location.</p>
     </article>
     {{/if}}
   </script>
@@ -30,22 +30,28 @@
   <script id="detail-template" type="text/x-handlebars-template">
     {{#if name}}
     <h2 class="detail-title">{{name}}</h2>
-    <h3>Tide Forecast</h3>
-    <ul>
-      {{#each tideData}}
-      <li class="{{status}}">{{time}}{{v}}</li>
-      {{/each}}
-    </ul>
-    {{else}}
-    <p>This is not a valid beach name</p>
-    {{/if}}
+    <section class="forecast">
+      <h3>Tide Forecast</h3>
+      <ul class="tides">
+        {{#each tideData}}
+        <li class="{{status}}">
+          <p>{{day}}</p>
+          <p>{{time}}</p>
+          <p>{{v}}ft</p>
+        </li>
+        {{/each}}
+      </ul>
+      {{else}}
+      <p>This is not a valid beach name</p>
+      {{/if}}
+    </section>
   </script>
 
   <script id="map-template" type="text/x-handlebars-template">
     {{#if name}}
     <article data-destination="{{name}}" class="beach-summary">
-    <h2 class="beach-title">{{name}}</h2>
-  </article>
+      <h2 class="beach-title">{{name}}</h2>
+    </article>
     {{/if}}
   </script>
 
@@ -55,15 +61,19 @@
 <body>
   <header>
     <a href="/"><img class="logo" src="/img/logo-icon.png"></a>
-    <span class="topTitle">Ebb</span>
-    <span class="bottomTitle">Tracker</span>
-    <i class="fa fa-bars fa-5x"></i>
+    <h1><a href="/">
+      <span class="topTitle">Ebb</span>
+      <span class="bottomTitle">Tracker</span></a>
+    </h1>
+    <!-- <i class="fa fa-bars fa-5x"></i> -->
+    <a href="/location" <i class="fa fa-search fa-5x"></i>
+    </a>
   </header>
 
   <nav>
     <ul>
-      <li><a href='/location'>Location</a></li>
-      <li><a href='/contact'>Contact</a></li>
+      <li><a href='/'>Home</a></li>
+      <li><a href='/location'>Search All Beaches</a></li>
     </ul>
   </nav>
 
@@ -74,31 +84,19 @@
     </section>
   </section>
 
-  <!--Search Section-->
-  <section id="search" class="nav-content">
-    <h1>Search Tide Pooling Locations</h1>
-    <div>
-      <p></p>
-    </div>
-  </section>
 
   <!--Location Section-->
   <section id="location" class="nav-content">
-    <h1>Location</h1>
+    <h2>Search Tide Pooling Locations</h2>
     <select multiple class="chosen-select" style="width:80%;" type="text" placeholder="Check for a Beach Nearby"></select>
     <section id="location-result"></section>
-    <ul>
-      <li><i class="fa fa-clock-o"></i>1<i class="fa fa-star"></i><i class="fa fa-star-half-o"></i><i class="fa fa-star-o"></i></li>
-      <li><i class="fa fa-clock-o">2</i></li>
-      <li><i class="fa fa-clock-o">3</i></li>
-    </ul>
   </section>
 
   <!--Detail Section-->
   <section id="detail" class="nav-content"></section>
 
   <div id="map"></div>
-  <div id="map2"></div>
+  <div id="detailMap"></div>
 
   <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
 

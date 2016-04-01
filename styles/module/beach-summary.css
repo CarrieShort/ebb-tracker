@@ -2,7 +2,7 @@
   border: 1px solid #CFCFCF;
   border-radius: 5px;
   padding: 10px;
-  margin: 10px;
+  margin: 10px 0;
   position: relative;
   cursor: pointer;
 }
@@ -40,4 +40,14 @@
 
 .beach-summary:hover h2{
   color: #fff;
+}
+
+@media screen and (min-width: 800px){
+  #index .beach-summary{
+    width: 48%;
+    float: left;
+  }
+  #index .beach-summary:nth-child(odd){
+    margin-right: 4%;
+  }
 }

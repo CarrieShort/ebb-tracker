@@ -23,14 +23,14 @@
     }
     var beachAdress = {lat: parseFloat(ctx.lat), lng: parseFloat(ctx.lng)};
 
-    var map2 = new google.maps.Map(document.getElementById('map2'), {
+    var detailMap = new google.maps.Map(document.getElementById('detailMap'), {
       center: userAddress,
       scrollwheel: false,
       zoom: 7
     });
 
     var directionsDisplay = new google.maps.DirectionsRenderer({
-      map: map2
+      map: detailMap
     });
 
     // Set destination, origin and travel mode.
@@ -48,7 +48,7 @@
         directionsDisplay.setDirections(response);
       }
     });
-    $( '#map2' ).insertAfter( 'h2' );
+    $( '#detailMap' ).insertAfter( 'h2' );
   };
 
   module.detailView = detailView;

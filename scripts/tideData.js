@@ -67,7 +67,7 @@
       var matchFound = false;
       if (acc.length > 0) {
         for (var i = 0; i < acc.length; i++) {
-          if (acc[i].v === cur.v && acc[i].day === cur.day) {
+          if (acc[i].v === cur.v) {
             matchFound = true;
           }
         }
@@ -81,14 +81,19 @@
     return(tideValue);
   };
 
-  // return array of filtered results
+  //return array of filtered results
   var filterNextLowTide = function(tideArray) {
-    var tideValue = tideArray.reduce(function(acc, cur, idx, arr){
-      var previousTide = idx -1;
-      var nextTide = idx + 1;
+    var tideValue = tideArray.reduce(function(acc, cur, idx, arr) {
+      var previousTideIndex = idx - 1;
+      var nextTideIndex = idx + 1;
+      var currentTide = parseFloat(cur.v);
 
-      if(previousTide > 0 && nextTide < (arr.length)){
-        if(parseFloat(cur.v) < parseFloat(arr[previousTide].v) && parseFloat(cur.v) < parseFloat(arr[nextTide].v)){
+      if (previousTideIndex > 0 && nextTideIndex < (arr.length)) {
+        var previousTide = parseFloat(arr[previousTideIndex].v);
+        var nextTide = parseFloat(arr[nextTideIndex].v);
+
+        if ((currentTide < previousTide && currentTide <= nextTide) || (currentTide <= previousTide && currentTide < nextTide)) {
+          cur.status = 'low';
           var splitDate = cur.t.split(' ');
           cur.time = splitDate[1];
           cur.day = splitDate[0];
@@ -96,8 +101,23 @@
         }
       }
       return acc;
-    },[]);
-    return tideValue;
+    }, [])
+    .reduce(function(acc, cur, idx, arr) {
+      var matchFound = false;
+      if (acc.length > 0) {
+        for (var i = 0; i < acc.length; i++) {
+          if (acc[i].v === cur.v) {
+            matchFound = true;
+          }
+        }
+      }
+      if (matchFound) {
+      } else {
+        acc.push(cur);
+      }
+      return acc;
+    }, []);
+    return(tideValue);
   };
 
   // Need to find next Low Tide, 12 hour increments
@@ -106,17 +126,19 @@
     var time = timeStamp();
     $.get(jsonUrl, {
       begin_date: today + ' ' + time,
-      range: 12,
+      range: 14,
       station: stationID,
       datum: 'MLW',
       product: 'predictions',
       units: 'english',
-      time_zone: 'gmt',
+      time_zone: 'lst',
       format: 'json'
     }).done(function(data) {
       var tides = JSON.parse(data);
+      console.log(tides.predictions);
       // tideData.nextTideResult = filterNextLowTide(tides.predictions);
       indexController.closeBeaches[idx].tideData = filterNextLowTide(tides.predictions);
+      console.log(Beach.all,filterNextLowTide(tides.predictions));
       Beach.all.push(new Beach(ele));
       callback();
     }).fail(function(e) {
@@ -133,7 +155,7 @@
       datum: 'MLW',
       product: 'predictions',
       units: 'english',
-      time_zone: 'gmt',
+      time_zone: 'lst',
       format: 'json'
     }).done(function(data) {
       var tides = JSON.parse(data);
