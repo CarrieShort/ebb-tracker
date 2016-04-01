@@ -1,0 +1,43 @@
+.beach-summary {
+  border: 1px solid #CFCFCF;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.beach-summary h2 {
+  color: #4D73B8;
+}
+
+.beach-summary:after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-bottom: 1px solid #CFCFCF;
+  border-right: 1px solid #CFCFCF;
+  transform: rotate(-45deg);
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  margin-top: -20px;
+}
+
+.beach-summary span {
+  padding-right: 20px;
+}
+
+.fa-clock-o {
+  padding-right: 5px;
+}
+
+.beach-summary:hover {
+  background: #4D73B8;
+  color: #fff;
+}
+
+.beach-summary:hover h2{
+  color: #fff;
+}
