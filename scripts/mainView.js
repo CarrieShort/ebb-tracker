@@ -5,7 +5,6 @@
   mainView.userLng;
 
   mainView.index = function(ctx, next) {
-    console.log('mainView');
     $('section').hide();
     $('#map2').hide();
     $('#map').show();
@@ -16,7 +15,6 @@
 
 
   mainView.map = function(ctx,next) {
-    console.log('initialize fires');
     var address = $('#address-input')[0];
     var autocomplete = new google.maps.places.Autocomplete(address);
     autocomplete.setTypes(['geocode']);
@@ -46,7 +44,6 @@
         lat: place.geometry.location.lat(),
         lng: place.geometry.location.lng()
       };
-      console.log(myLatLng);
       // Create a map object and specify the DOM element for display.
       var map = new google.maps.Map(document.getElementById('map'), {
         center: myLatLng,
@@ -60,11 +57,10 @@
         position: myLatLng,
         title: 'Hello World!'
       });
-
+      
       next();
     });
   };
-
 
   module.mainView = mainView;
 }(window));

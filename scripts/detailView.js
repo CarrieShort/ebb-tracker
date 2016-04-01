@@ -2,7 +2,6 @@
   var detailView = {};
 
   detailView.index = function(ctx, next) {
-    console.log('detailView');
     $('section').hide();
     $('#map').hide();
     $('#detail').show();
@@ -14,11 +13,8 @@
   };
 
   detailView.map = function(ctx, next) {
-    console.log(ctx.lng);
-    console.log(ctx.lat);
-    console.log('getting user lat lang', mainView.userLat, mainView.userLng);
+
     if (ctx.userLat){
-      console.log({lat: ctx.userLat, lng: ctx.userLng});
       var userAddress = {lat: ctx.userLat, lng: ctx.userLng};
 
     } else{
@@ -53,10 +49,7 @@
       }
     });
     $( '#map2' ).insertAfter( 'h2' );
-    console.log('reached end of map function');
   };
-
-
 
   module.detailView = detailView;
 })(window);
