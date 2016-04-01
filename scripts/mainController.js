@@ -25,11 +25,15 @@
   Beach.renderSearchResults = function(ctx, next) {
 
     $('#index .result').empty();
-    Beach.all.forEach(function(ele) {
-      ele.userLng = mainView.userLng;
-      ele.userLat = mainView.userLat;
-      $('#index .result').append(ele.toHtml($('#beach-template')));
-    });
+    if(Beach.all.length > 0){
+      Beach.all.forEach(function(ele) {
+        ele.userLng = mainView.userLng;
+        ele.userLat = mainView.userLat;
+        $('#index .result').append(ele.toHtml($('#beach-template')));
+      });
+    } else {
+      $('#index .result').append('<p>No beaches near this location, enter another address closer to the ocean in the state of Washington</p>');
+    }
   };
 
   Beach.renderLocations = function(ctx, next) {
@@ -91,11 +95,14 @@
   Beach.loadSearchResults = function(callback) {
     Beach.all = [];
     $('#index .result').empty();
-
-    indexController.closeBeaches.forEach(function(ele, idx, arr) {
-      var stationID = ele.stationID;
-      tideData.nextLowTideData(stationID, idx,ele,callback);
-    });
+    if(indexController.closeBeaches.length > 0){
+      indexController.closeBeaches.forEach(function(ele, idx, arr) {
+        var stationID = ele.stationID;
+        tideData.nextLowTideData(stationID, idx,ele,callback);
+      });
+    }else{
+      callback();
+    }
   };
 
   module.Beach = Beach;
