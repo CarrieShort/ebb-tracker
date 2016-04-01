@@ -1,10 +1,9 @@
-$('body').on('click','.beach-summary',function(){
-  var clickedBeach = $(this).data('destination').replace(' ','-');
-  location.href = 'beach/'+clickedBeach;
-  console.log(clickedBeach);
-});
-
 (function(module) {
+  $('body').on('click','.beach-summary',function(){
+    var clickedBeach = $(this).data('destination').replace(' ','-');
+    location.href = 'beach/'+clickedBeach;
+    console.log(clickedBeach);
+  });
   var beaches = [];
 
   function Beach(opts) {
