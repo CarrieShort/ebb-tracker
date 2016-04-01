@@ -16,7 +16,6 @@
 
     if (ctx.userLat){
       var userAddress = {lat: ctx.userLat, lng: ctx.userLng};
-
     } else{
       // If no user data is passed use Seattle
       var userAddress = {lat: 47.607819, lng: -122.332137};

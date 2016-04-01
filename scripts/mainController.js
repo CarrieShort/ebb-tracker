@@ -27,8 +27,8 @@
     $('#index .result').empty();
     if(Beach.all.length > 0){
       Beach.all.forEach(function(ele) {
-        ele.userLng = mainView.userLng;
-        ele.userLat = mainView.userLat;
+        ele.userLng = indexView.userLng;
+        ele.userLat = indexView.userLat;
         $('#index .result').append(ele.toHtml($('#beach-template')));
       });
     } else {
