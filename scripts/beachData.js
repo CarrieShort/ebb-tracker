@@ -6,7 +6,7 @@
   var ref = new Firebase('https://ebb-tracker.firebaseio.com/beaches');
 
   beachData.retrieveData = function(ctx, next) {
-    ref.once("value", function(snapshot) {
+    ref.once('value', function(snapshot) {
       if (beachData.beachArray.length > 0){
         beachData.beachArray = [];
       }

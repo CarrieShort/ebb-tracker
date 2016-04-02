@@ -1,10 +1,10 @@
 (function(module) {
-  var mainView = {};
+  var indexView = {};
 
-  mainView.userLat;
-  mainView.userLng;
+  indexView.userLat;
+  indexView.userLng;
 
-  mainView.index = function(ctx, next) {
+  indexView.index = function(ctx, next) {
     $('section').hide();
     $('#detailMap').hide();
     $('#map').show();
@@ -14,7 +14,7 @@
   };
 
 
-  mainView.map = function(ctx,next) {
+  indexView.map = function(ctx,next) {
     var address = $('#address-input')[0];
     var autocomplete = new google.maps.places.Autocomplete(address);
     autocomplete.setTypes(['geocode']);
@@ -34,8 +34,8 @@
       }
 
 
-      mainView.userLat = place.geometry.location.lat();
-      mainView.userLng = place.geometry.location.lng();
+      indexView.userLat = place.geometry.location.lat();
+      indexView.userLng = place.geometry.location.lng();
 
       indexController.generateCloseBeaches();
       Beach.loadSearchResults(Beach.renderSearchResults);
@@ -60,5 +60,5 @@
     });
   };
 
-  module.mainView = mainView;
+  module.indexView = indexView;
 }(window));
