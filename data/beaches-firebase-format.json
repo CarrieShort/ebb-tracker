@@ -63,15 +63,6 @@
         "url": "http://www.deceptionpassfoundation.org/around-the-park/bowman-bay/"
       }
     },
-    "3" : {
-      "beach" : {
-        "name": "Gene Coulon Memorial Beach",
-        "longitude": "-122.2044306",
-        "latitude": "47.5038267",
-        "stationID": "9447130",
-        "url": "https://rentonwa.gov/living/default.aspx?id=74"
-      }
-    },
     "4" : {
       "beach" : {
         "name": "Jetty Island",
@@ -97,15 +88,6 @@
         "latitude": "47.3133588",
         "stationID": "9446484",
         "url": "http://www.metroparkstacoma.org/point-d-owen-beach/"
-      }
-    },
-    "7" : {
-      "beach" : {
-        "name": "Denny Blaine Park",
-        "longitude": "-122.2823583",
-        "latitude": "47.6201211",
-        "stationID": "9447130",
-        "url": "http://www.seattle.gov/parks/park_detail.asp?ID=3982"
       }
     },
     "8" : {
