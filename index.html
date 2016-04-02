@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ebb Tracker - Mobile app for tracking tides and tide pooling locations</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="/vendor/styles/reset.css">
+  <link rel="stylesheet" type="text/css" href="/vendor/styles/chosen.min.css">
+
+  <link rel="stylesheet" type="text/css" href="/styles/base/base.css">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800|Italianno">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/styles/layout/layout.css">
+  <link rel="stylesheet" type="text/css" href="/styles/module/header.css">
+  <link rel="stylesheet" type="text/css" href="/styles/module/beach-summary.css">
+  <link rel="stylesheet" type="text/css" href="/styles/module/beach-detail.css">
+  <link rel="stylesheet" type="text/css" href="/styles/module/location-view.css">
+  <link rel="stylesheet" type="text/css" href="/styles/state/hover.css">
+
+
+  <script id="beach-template" type="text/x-handlebars-template">
+    {{#if name}}
+    <article data-destination="{{name}}" data-lng="{{userLng}}" data-lat="{{userLat}}" class="beach-summary">
+      <h2>{{name}}</h2> {{#each tideData}}
+      <p><span class="tide">{{v}}ft</span> <span class="time"><i class="fa fa-clock-o"></i>{{time}}</span></p>
+      {{/each}} {{else}}
+      <p>There are no beaches near you please change your location.</p>
+    </article>
+    {{/if}}
+  </script>
+
+  <script id="detail-template" type="text/x-handlebars-template">
+    {{#if name}}
+    <h2 class="detail-title">{{name}}</h2>
+    <section class="forecast">
+      <h3>Tide Forecast</h3>
+      <ul class="tides">
+        {{#each tideData}}
+        <li class="{{status}}">
+          <p>{{day}}</p>
+          <p>{{time}}</p>
+          <p>{{v}}ft</p>
+        </li>
+        {{/each}}
+      </ul>
+      {{else}}
+      <p>This is not a valid beach name</p>
+      {{/if}}
+    </section>
+  </script>
+
+  <script id="map-template" type="text/x-handlebars-template">
+    {{#if name}}
+    <article data-destination="{{name}}" class="beach-summary">
+      <h2 class="beach-title">{{name}}</h2>
+    </article>
+    {{/if}}
+  </script>
+</head>
+
+<body>
+  <header>
+    <a href="/"><img class="logo" src="/img/logo-icon.png"></a>
+    <h1><a href="/">
+      <span class="topTitle">Ebb</span>
+      <span class="bottomTitle">Tracker</span></a>
+    </h1>
+    <a href="/location" <i class="fa fa-search fa-2x"></i>
+    </a>
+  </header>
+
+  <!--Home Page Section-->
+  <section id="index">
+    <input id="address-input" class="controls" type="text" placeholder="Enter your address">
+    <section class="result">
+    </section>
+  </section>
+
+
+  <!--Location Section-->
+  <section id="location" class="nav-content">
+    <h2>Search Tide Pooling Locations</h2>
+    <select multiple class="chosen-select" type="text" placeholder="Check for a Beach Nearby"></select>
+    <section id="location-result"></section>
+  </section>
+
+  <!--Detail Section-->
+  <section id="detail" class="nav-content"></section>
+
+  <div id="map"></div>
+  <div id="detailMap"></div>
+
+  <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="/vendor/scripts/page.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyA5TmznoCK4jIWsdIoRxGt32Fo0UgueGKw"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+  <script src="/vendor/scripts/chosen.jquery.min"></script>
+
+  <script src="/scripts/tideData.js"></script>
+  <script src="/scripts/beachData.js"></script>
+
+  <script src="/scripts/indexView.js"></script>
+  <script src="/scripts/detailView.js"></script>
+  <script src="/scripts/locationView.js"></script>
+
+  <script src="/scripts/mainController.js"></script>
+  <script src="/scripts/locationController.js"></script>
+  <script src="/scripts/indexController.js"></script>
+
+  <script src="/scripts/route.js"></script>
+</body>
+
+</html>

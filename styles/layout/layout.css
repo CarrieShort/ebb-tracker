@@ -1,0 +1,34 @@
+body > section {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#address-input {
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 200;
+  text-overflow: ellipsis;
+  width: 100%;
+  border: 1px solid #BDAD75;
+  background: #F3EAD4;
+  border-radius: 5px;
+}
+
+#address-input:focus {
+  border-color: #4d90fe;
+  margin-left: -1px;
+  padding-left: 14px;
+  width: 100%;
+}
+
+#map {
+  width: 100%;
+  height: 300px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+#detailMap {
+  width: 100%;
+  height: 300px;
+}

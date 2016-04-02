@@ -1,0 +1,171 @@
+{
+  "beaches" : {
+    "-KE3YeEUDb4gMRSY4OIc" : {
+      "beach" : {
+        "name": "Carkeek Park",
+        "longitude": "-122.372298",
+        "latitude": "47.712489",
+        "stationID": "9447130",
+        "url": "http://www.seattle.gov/parks/environment/carkeek.htm"
+      }
+    },
+    "-KE3ak57EVqqjLOLGydp" : {
+      "beach" : {
+        "name": "Golden Gardens",
+        "longitude": "-122.402293",
+        "latitude": "47.689707",
+        "stationID": "9447130",
+        "url": "http://www.seattle.gov/parks/park_detail.asp?id=243"
+      }
+    },
+    "-KE3ameZjBKWJ_kGGbWM" : {
+      "beach" : {
+        "name": "Discovery Park",
+        "longitude": "-122.416435",
+        "latitude": "47.666362",
+        "stationID": "9447130",
+        "url": "http://www.seattle.gov/parks/environment/discovery.htm"
+      }
+    },
+    "-KE71h8yigiHbASc0fpk" : {
+      "beach" : {
+        "name": "Grayland Beach State Park",
+        "longitude": "-124.091305",
+        "latitude": "46.786784",
+        "stationID": "9441102",
+        "url": "http://parks.state.wa.us/515/Grayland-Beach"
+      }
+    },
+    "-KE71id6brzOcMONwuMk" : {
+      "beach" : {
+        "name": "Birch Bay Park",
+        "longitude": "-122.7664776",
+        "latitude": "48.9045338",
+        "stationID": "9448682",
+        "url": "http://parks.state.wa.us/170/Birch-Bay"
+      }
+    },
+    "1" : {
+      "beach" : {
+        "name": "Point No Point",
+        "longitude": "-122.5298516",
+        "latitude": "47.9118655",
+        "stationID": "9447130",
+        "url": "http://www.kitsapgov.com/parks/Parks/Pages/regionalparks/point_no_point.htm"
+      }
+    },
+    "2" : {
+      "beach" : {
+        "name": "Bowman Hill",
+        "longitude": "-122.6588347",
+        "latitude": "48.4134624",
+        "stationID": "9448682",
+        "url": "http://www.deceptionpassfoundation.org/around-the-park/bowman-bay/"
+      }
+    },
+    "4" : {
+      "beach" : {
+        "name": "Jetty Island",
+        "longitude": "-122.2308938",
+        "latitude": "48.0036175",
+        "stationID": "9447130",
+        "url": "http://www.portofeverett.com/recreation/beaches-kiteboarding/jetty-island-290"
+      }
+    },
+    "5" : {
+      "beach" : {
+        "name": "Scenic Beach State Park",
+        "longitude": "-122.8539443",
+        "latitude": "47.642704",
+        "stationID": "9447130",
+        "url": "http://parks.state.wa.us/579/Scenic-Beach"
+      }
+    },
+    "6" : {
+      "beach" : {
+        "name": "Owen Beach",
+        "longitude": "-122.5309413",
+        "latitude": "47.3133588",
+        "stationID": "9446484",
+        "url": "http://www.metroparkstacoma.org/point-d-owen-beach/"
+      }
+    },
+    "8" : {
+      "beach" : {
+        "name": "Ruby Beach",
+        "longitude": "-124.432912",
+        "latitude": "47.7108715",
+        "stationID": "9442396",
+        "url": "https://www.nps.gov/olym/planyourvisit/visiting-kalaloch-and-ruby-beach.htm"
+      }
+    },
+    "9" : {
+      "beach" : {
+        "name": "Long Beach Peninsula",
+        "longitude": "-124.077225",
+        "latitude": "46.301437",
+        "stationID": "9442396",
+        "url": "https://funbeach.com"
+      }
+    },
+    "10" : {
+      "beach" : {
+        "name": "Me Kwa Mooks",
+        "longitude": "-122.4064416",
+        "latitude": "47.5634547",
+        "stationID": "9447130",
+        "url": "http://www.seattle.gov/parks/park_detail.asp?ID=473"
+      }
+    },
+    "11" : {
+      "beach" : {
+        "name": "Marine View Park",
+        "longitude": "-122.3437396",
+        "latitude": "47.4137398",
+        "stationID": "9447130",
+        "url": "http://www.ci.normandy-park.wa.us/vertical/Sites/%7BD313ED69-120E-439F-83D7-8BBE7447C948%7D/uploads/%7BFCD25EA8-D297-42A6-A716-60D9CF39DA1C%7D.PDF"
+      }
+    },
+    "12" : {
+      "beach" : {
+        "name": "Ocean Shores",
+        "longitude": "-124.176817",
+        "latitude": "46.9856296",
+        "stationID": "9441102",
+        "url": "http://www.osgov.com/Parks.html"
+      }
+    },
+    "13" : {
+      "beach" : {
+        "name": "Squalicum Beach Park",
+        "longitude": "-122.5152702",
+        "latitude": "48.7629009",
+        "stationID": "9448682",
+        "url": "https://www.cob.org/services/recreation/parks-trails/Pages/little-squalicum-park.aspx"
+      }
+    }
+  },
+  "ratings" : {
+    "Carkeek Park" : {
+      "1star" : "10",
+      "2star" : "12",
+      "3star" : "1",
+      "4star" : "0",
+      "5star" : "0"
+    },
+    "Discovery Park" : {
+      "1star" : "3",
+      "2star" : "2",
+      "3star" : "12",
+      "4star" : "1",
+      "5star" : "1"
+    },
+    "Golden Gardens" : {
+      "1star" : "1",
+      "2star" : "3",
+      "3star" : "5",
+      "4star" : "1",
+      "5star" : "0"
+    }
+  }
+}
