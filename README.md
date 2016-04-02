@@ -1,5 +1,5 @@
 # ebb-tracker
-Ebb tracker description placeholder
+A mobile focused application to easily find tide pooling locations near you and find low and high tide information for each location.
 
 ##Resources
 ###APIs
@@ -21,6 +21,7 @@ Ebb tracker description placeholder
 * JS: camelCase
 
 ##User Stories
+
 ###Users
 * As a user I want to find tide pooling locations near me
 * As a user I want to when low tide is, so I can go tide pooling without dying
@@ -31,6 +32,7 @@ Ebb tracker description placeholder
 * As a user I want to easily search through a list of available locations
 * As a user I want to rate my tide pooling experience
 * As a user I want a visually appealing website
+
 ###Developers
 * As a developer I want to implement MVC principals and OOP
 * As a developer I want to organize my CSS with SMACSS principals
