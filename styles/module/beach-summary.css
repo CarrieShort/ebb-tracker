@@ -12,6 +12,10 @@
   padding-right: 30px;
 }
 
+.beach-summary .high,.beach-summary .low {
+  display: none;
+}
+
 .beach-summary:after {
   content: "";
   display: block;
