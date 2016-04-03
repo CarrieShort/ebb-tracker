@@ -22,7 +22,7 @@
     {{#if name}}
     <article data-destination="{{name}}" data-lng="{{userLng}}" data-lat="{{userLat}}" class="beach-summary">
       <h2>{{name}}</h2> {{#each tideData}}
-      <p><span class="tide">{{v}}ft</span> <span class="time"><i class="fa fa-clock-o"></i>{{time}}</span></p>
+      <p class="{{status}}"><span class="tide">{{v}}ft</span> <span class="time"><i class="fa fa-clock-o"></i>{{time}}</span></p>
       {{/each}} {{else}}
       <p>There are no beaches near you please change your location.</p>
     </article>
